@@ -1,0 +1,79 @@
+<div ng-show="status" class="pageheader ng-scope" style="padding-bottom:0cm;padding-top:0cm;padding-left:1%">
+
+    <div class="row">    <div class="col-md-6">
+        <md-button ng-click="change()" >
+            <h2> <i class="fa fa-chevron-left" aria-hidden="true" ng-show="status"></i> Engineer Dashboard</h2> 
+        </md-button> 
+    
+        </div>
+         
+
+        <div class="col-md-6 " ng-show="status" >
+            <form class="form-horizontal" style="font-size:90%">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label class="control-label col-md-2" style="padding=bottom:1%">Main</label>    
+                        <div class="col-md-10">
+
+                            <select  style="margin-top:3%"  class="form-control input-sm" ng-change="init(search.main,search.sub)" ng-model="search.main">
+                                <option ng-repeat=" x in types" value="{{x.id}}">
+
+                                    {{x.name}}
+
+                                </option>    
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-3" style="padding=bottom:1%">Type</label>    
+                        <div class="col-md-9">
+
+                            <select   style="margin-top:4%" class="form-control input-sm" ng-change="init(search.main,search.sub)" ng-model="search.sub">
+                                <option ng-repeat=" x in labels" value="{{x}}">
+
+                                    {{x}}
+
+                                </option>    
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-2" >
+                    <!--
+<button class="btn btn-success btn-block btn-sm">Load</button> -->
+                </div>
+
+
+            </form>
+
+
+        </div>
+    </div>
+
+</div>
+
+<br>
+<div ng-hide="status"> 
+<div   class="row animated bounceInUp" style="margin-bottom:1%" >
+    <div class="col-md-offset-4 col-md-4">
+        <center> <div class="btn-group col-md-12 " ng-init="stat = 'DASH'">
+            <button class="btn  btn-sm col-md-6   " ng-click="stat = 'DASH'" ng-class="stat == 'DASH'?'btn-info':'btn-white'"    ui-sref="engDash.overall" >Dashboard</button>
+            <button class="btn btn-sm  col-md-6  " ng-click="stat = 'REP'"   ng-class="stat == 'REP'?'btn-info':'btn-white'"  ui-sref="engDash.reports"    >Live Reports</button>
+
+            </div> </center>
+    </div> 
+    </div>
+
+</div>
+<div  ui-view name="result"> </div>

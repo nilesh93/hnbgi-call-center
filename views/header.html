@@ -1,0 +1,49 @@
+<!--logo start-->
+<div ng-controller="navController as nav"  >
+<div class="brand">
+    <a    class="logo">
+        <span>HNBGI</span>CORE APP</a>
+</div>
+<!--logo end-->
+<ul class="nav navbar-nav navbar-left" ng-controller="navController as nav">
+
+    <li class="  "  ng-show="userPermission.indexOf('WORKSPACE') != -1" >  <a href="" class="options " ui-sref="workplace" ng-class="nav.navStatus == 'WORKSPACE'?'active':''"     >
+        WORKSPACE
+        </a></li>
+
+    <li class="  "  ng-show="userPermission.indexOf('POLICIES') != -1">  <a href="" ng-class="nav.navStatus == 'JOB'?'active':''" class=" options " ui-sref="job.search"     >
+         POLICIES
+        </a></li>
+    
+    <li class="  " ng-show="userPermission.indexOf('INSPECTIONS') != -1" >  <a href="" ng-class="nav.navStatus == 'INTIMATIONS'?'active':''" class=" options " ui-sref="intimation.search"     >
+       INSPECTIONS
+        </a></li>
+    
+       
+    <li class="  "   ng-show="userPermission.indexOf('PUR') != -1">  <a href="" ng-class="nav.navStatus == 'PUR'?'active':''" class=" options " ui-sref="pur.search"    ui-sref-active ="active" >
+       PUR
+        </a></li>
+ <li class="  "  ng-show="userPermission.indexOf('COVERNOTE') != -1" >  <a href="" ng-class="nav.navStatus == 'COVERNOTE'?'active':''" class=" options " ui-sref="covernote.motor"      >
+      COVER-NOTE
+        </a></li>
+    
+     <li class="  " ng-show="userPermission.indexOf('ENGDASH') != -1" >  <a href="" ng-class="nav.navStatus == 'ENG-DASHBOARD'?'active':''" class=" options " ui-sref="engDash.overall"   ng-click="dash()"  >
+      ENG-DASH
+        </a></li>
+    <!--ng-hide="userRole != 'CC_MGR'"-->
+    
+      <li class="  "  ng-show="userPermission.indexOf('CRCDASH') != -1">  <a href="" ng-class="nav.navStatus == 'CRC-DASHBOARD'?'active':''" class=" options " ui-sref=" crcDash.dashboard"   ng-click="dash()"  >
+      CRC-DASH
+        </a></li>
+    
+   
+
+
+</ul> 
+<ul class="nav navbar-nav navbar-right">
+       <li class="  "  >  <a href=""  class="options" ng-click="logoutFunct()"      >
+      <i class="fa fa-user"></i> &nbsp;LOGOUT
+        </a></li>
+   <!-- <li class="toggle-navigation toggle-right" toggle-right-sidebar></li> -->
+</ul>  
+</div>

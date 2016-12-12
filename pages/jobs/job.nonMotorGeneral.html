@@ -1,0 +1,109 @@
+<div class="row"   >
+
+    <div class="col-md-12"  >
+
+
+        <div class="panel   panel-primary" style="font-size:90%" >
+            <div class="panel-heading">
+                <h3 class="page-title" style="color:#fff">General Information </h3>
+            </div>
+
+            <div class="panel-body">
+
+                <div class="col-md-6 "  >
+
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b> Policy No. </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.policyNo}}</div>
+                    </div>
+
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b> Proposal No. </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.proposalNo}}</div>
+                    </div>
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b> From </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.effectiveDate}}</div>
+                    </div>
+
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b> To </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.expiryDate}}</div>
+                    </div>
+
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b> Product </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.productCode}}</div>
+                    </div>
+                     <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b>   Description</b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.productDesc}}</div>
+                    </div>
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b> Status </b></div>
+                        <div class="col-md-9 text-uppercase">      <span class="label  text-uppercase" ng-class="activePolicyGeneral.policyStatus == 'ACTIVE POLICY' ? 'label-success': activePolicyGeneral.policyStatus == 'PPW CANC' ? 'label-info':'label-danger'">
+                                        {{activePolicyGeneral.policyStatus}}
+                                    </span> </div>
+                    </div>
+
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b>Agent </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.agentName}}</div>
+                    </div>
+
+                
+                </div>
+
+                <div class="col-md-6 "  >
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b>Client Name </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.insuredName}}</div>
+                    </div>
+
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b>Address </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.insuredAddress}}</div>
+                    </div>
+
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b>Telephone </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.mobileNo}}</div>
+                    </div>
+
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b>Sum Insured </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.sumInsured | currency: "Rs."}}</div>
+                    </div>
+
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b>Premium </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.gwPremium | currency: "Rs."}}</div>
+                    </div>
+
+                    <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b>Total Premium </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.totalPremium | currency: "Rs."}}</div>
+                    </div>
+                    
+                        <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b>Branch Code </b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.branchCode}}</div>
+                    </div>
+
+                        <div class="row" style="padding-top:1.5%">
+                        <div class="col-md-3" style="padding-left:0cm"><b>Branch Name</b></div>
+                        <div class="col-md-9 text-uppercase">{{activePolicyGeneral.branchCode}}</div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>

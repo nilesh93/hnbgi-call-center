@@ -1,0 +1,66 @@
+<div class="pageheader">
+    <h2>Dashboard</h2>
+    <p class="description">{{main.headerText}}</p>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li class="active">Dashboard</li>
+        </ol>
+    </div>
+</div>
+<section id="main-content">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                      <div class=" ">
+                            <form class="form-vertical" role="form">
+                                
+                                  <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="control-label" for="exampleInputEmail2">Policy No</label>
+                                <input type="text" class="form-control"   placeholder="Enter Policy Number">
+                            </div>
+                       </div>
+                            
+                                  <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="control-label" for="exampleInputEmail2">NIC</label>
+                                <input type="text" class="form-control"   placeholder="123456789V">
+                            </div>
+                       </div>
+                                     <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label" for="exampleInputEmail2">Name</label>
+                                <input type="text" class="form-control"   placeholder="Enter Customer Name">
+                            </div>
+                       </div>
+                                
+                                <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="control-label" for="exampleInputEmail2">Vehicle No.</label>
+                                <input type="text" class="form-control"   placeholder="Enter Vehicle No.">
+                            </div>
+                       </div>
+                                 <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="control-label" for="exampleInputEmail2">Engine No</label>
+                                <input type="email" class="form-control"  placeholder="Enter Engine No.">
+                            </div>
+                       </div>
+                    
+                                 
+                                 <div class="col-md-1" style="margin-top:2%">
+                                     
+                            <button type="button" class="btn    btn-block btn-primary" ng-click="search()">Search</button>
+                                </div>
+                        </form>
+                        </div>
+                
+                </div>
+            </div>
+            <div   ui-view name="result"> </div>
+            
+        </div>
+    </div>
+</section>

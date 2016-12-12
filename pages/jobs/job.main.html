@@ -1,0 +1,70 @@
+<!--<div class="pageheader">
+    <h2>Jobs</h2>
+    <p class="description">{{main.headerText}}</p>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li class="active">Jobs</li>
+        </ol>
+    </div>
+</div>-->
+<section id="main-content">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="panel panel-default" style="font-size:80%">
+                <div class="panel-body">
+                    <div class=" ">
+                        <form class="form-vertical" role="form" name="jobInfo" novalidate angular-validator angular-validator-submit='search()'>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail2">Policy No</label>
+                                    <input type="text" class="form-control input-sm"  ng-model="jc.jobSearch.polnum"  placeholder="Enter Policy Number">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail2">NIC</label>
+                                    <input type="text" class="form-control input-sm"   placeholder="123456789V" ng-model="jc.jobSearch.nic">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail2">Name</label>
+                                    <input type="text" class="form-control input-sm"   placeholder="Enter Customer Name" ng-model="jc.jobSearch.name">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail2">Vehicle No.</label>
+                                    <input type="text" class="form-control input-sm"   placeholder="Enter Vehicle No." ng-model="jc.jobSearch.vnum">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail2">Contact No</label>
+                                    <input type="text" class="form-control input-sm"  placeholder="Enter Contact No." ng-model="jc.jobSearch.enum">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-1" style="margin-top:2%">
+
+                           
+                                                        <button type="submit" class="btn btn-sm   btn-block btn-primary"   ng-disabled="searching">Search</button>
+       
+                            </div>
+                        </form>
+                        
+                      <md-progress-linear  ng-show="searching" md-mode="indeterminate"></md-progress-linear>
+                    </div>
+
+                </div>
+            </div>
+            <div  ui-view name="result"> </div>
+
+        </div>
+    </div>
+</section>

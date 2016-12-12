@@ -1,0 +1,621 @@
+
+<div class="   ">    <div class="panel  panel-deafult"   style="font-size:85%; " >
+
+        <aside class="panel-body">
+
+
+
+
+
+
+            <form class="form-horizontal form-border" name="jobInfo" novalidate angular-validator angular-validator-submit='intimation(jobInfo)' autocomplete="off" >
+
+                <fieldset ng-disabled="saving">
+                    <h2> <span class="label label-primary">Policy Information </span>  </h2>
+                    <hr>
+
+                    <div class="form-group">
+
+                        <label class=" col-sm-2 control-label    ">Call Date</label>
+
+                        <div class="col-sm-2">
+
+
+                            <!--  <datetimepicker data-ng-model="job.callDate"></datetimepicker> -->
+
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" id="callDate" role="button" data-toggle="dropdown" data-target="#" href="">
+                                    <input type="text" class="form-control input-sm" ng-model="job.callDate" readonly>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                                    <datetimepicker data-ng-model="job.callDate"
+                                                    data-datetimepicker-config="{ dropdownSelector: '#callDate' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                                </ul>
+                            </div>
+
+
+                        </div>
+
+                        <label class="col-sm-3 control-label  ">Time</label>
+
+                        <div class="col-sm-2">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" id="time" role="button" data-toggle="dropdown" data-target="#" href="">
+                                    <input type="text" class="form-control input-sm" ng-model="job.callTime" readonly>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel4">
+                                    <datetimepicker data-ng-model="job.callTime"
+                                                    data-datetimepicker-config="{ dropdownSelector: '#time' ,startView : 'hour', minView:'minute',modelType:'hh:mm:ss A'}"></datetimepicker>
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+
+
+
+                        <label class="col-sm-2 control-label ">Name of Insured</label>
+
+                        <div class="col-sm-5">
+                            <input type="text" name="nameofinsured" class="form-control input-sm" ng-model="job.insuredName">
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+                    <div class="form-group">
+
+
+                        <label class="col-sm-2 control-label  ">Insured NIC</label>
+
+                        <div class="col-sm-3">
+                            <input  name="NIC" type="text" class="form-control input-sm"ng-model = "job.NIC" >  
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group">
+
+
+                        <div class="col-sm-2"> 
+                            <label class="pull-right  ">Vehicle Number</label>
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="text"  name="vehicleNumber" class="form-control input-sm" ng-model="job.vehicleNum">
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group" hidden="true">
+
+
+
+                        <label class="col-sm-2 control-label ">Vehicle Make</label>
+
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control input-sm" ng-model="job.vehicleMake">
+
+                        </div>
+
+
+                        <label class="col-sm-2 control-label ">Vehicle Model</label>
+
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control input-sm" ng-model="job.vehicleModel">
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Mobile</label>
+
+                        <div class="col-sm-3">
+                          
+                            
+                              <input type="text" name="polHoldMobile" ng-model="job.polHoldMobile" class="form-control input-sm"  ng-pattern="'^[0-9]{10}$'"  required-message = "'*Mobile Number Required '"  validate-on="dirty"  invalid-message = "'*10 digits required'" required> 
+                            
+          
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group" hidden="true">
+
+                        <label class="col-sm-2 control-label">From</label>
+
+                        <div class="col-sm-3">
+                               <div class="dropdown">
+                                <a class="dropdown-toggle" id="from" role="button" data-toggle="dropdown" data-target="#" href="">
+                                    <input type="text" class="form-control input-sm" ng-model="job.fromDate" readonly>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                                    <datetimepicker data-ng-model="job.fromDate"
+                                                    data-datetimepicker-config="{ dropdownSelector: '#from' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                          <label class="col-sm-2 control-label">To</label>
+
+                        <div class="col-sm-3">
+                               <div class="dropdown">
+                                <a class="dropdown-toggle" id="to" role="button" data-toggle="dropdown" data-target="#" href="">
+                                    <input type="text" class="form-control input-sm" ng-model="job.toDate" readonly>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                                    <datetimepicker data-ng-model="job.toDate"
+                                                    data-datetimepicker-config="{ dropdownSelector: '#to' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <h2> <span class="label label-warning"> Intimation Information </span>  </h2>
+                    <hr>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Intimation Type</label>
+                        <div class="col-sm-4">
+                            <select class="form-control input-sm" ng-init="job.status = 'COVER NOTE'" ng-model="job.status" disabled >
+
+                                <option ng-repeat="x in intimationTypeList" value="{{x.moiType}}"> {{x.moiType}}</option>
+                            </select>
+                        </div>
+
+
+
+                        <label class="col-sm-2 control-label">Action Taken </label>
+                        <div class="col-sm-4">
+                            <select class="form-control input-sm" ng-init="job.actionTaken = '1'" ng-model="job.actionTaken">
+
+                                <option ng-repeat=" x in intimationActions" value="{{x.actionCode}}">   
+                                    {{x.actionType}}
+                                </option>
+
+
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Date of Accident  </label>
+                        <div class="col-sm-4">
+
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" id="doa" role="button" data-toggle="dropdown" data-target="#" href="">
+                                    <input type="text" class="form-control input-sm" ng-model="job.dateOfAccident" readonly>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel1">
+                                    <datetimepicker data-ng-model="job.dateOfAccident"
+                                                    data-datetimepicker-config="{ dropdownSelector: '#doa' ,minView:'minute',modelType:'DD/MM/YYYY hh:mm:ss A'}"></datetimepicker>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <label class="col-sm-2 control-label">Comments</label>
+
+                        <div class="col-sm-4">
+                            <textarea type="text" Placeholder="Any special remarks?" ng-model="job.comments" ng-init="job.comments = ''" class="form-control input-sm"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+
+                        <label class="col-sm-2 control-label">Caller Name   </label>
+                        <div class="col-sm-4">
+                            <input type="text" name="callerName" ng-model="job.callerName" class="form-control input-sm"    required-message = "'*Caller Name Required '" placeholder="Enter Caller Name"  required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Place of Accident</label>
+                        <div class="col-sm-10">
+
+                            <input type="text" class="form-control input-sm"  ng-model="job.accident_place" ng-init="job.accident_place = ''" name="accident_place"    required-message = "'*Place of Accident Required '"     placeholder="Enter the place of accident"  required> 
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Nearest Town   </label>
+                        <div class="col-sm-4">
+
+                     <input type="text" class="form-control input-sm" g-places-autocomplete options="autocompleteOptions" ng-model="job.nearestTown" ng-init="job.nearestTown = ''"  name="nearestTown" ng-blur="loadPoliceStations(job)" placeholder="Google Autocomplete is here"  required-message = "'*Nearest Town Required '"   required>  
+
+                        </div>
+
+
+
+                        <label class="col-sm-2 control-label">Site   </label>
+                        <div class="col-sm-4" ng-init="job.site = 'Yes'">
+
+                          <label class="radio-inline">
+                                <input class="icheck" type="radio" ng-model="job.site"  checked="true"   value="Yes"  name="onsiteDetails" >On Site</label>
+                            <label class="radio-inline">
+                                <input class="icheck" type="radio"  name="onsiteDetails" ng-model="job.site" value="No">Off Site</label> 
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group" ng-show="job.site == 'No'">
+
+
+                        <label class="col-sm-2 control-label">    </label>
+                        <div class="col-sm-4">
+
+                        </div>
+
+                        <label class="col-sm-2 control-label">Off Site Info    </label>
+                        <div class="col-sm-4">
+
+                            <input type="text" class="form-control input-sm" placeholder="Enter Offsite Info" ng-model="job.offsiteInfo">
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Cause of Damage  </label>
+                        <div class="col-sm-6">
+                            <select class="form-control input-sm" ng-init="job.descriptionCode = '0'" ng-model="job.descriptionCode">
+
+                                <option ng-repeat="c in claimDescList" value="{{c.descriptionId}}">
+                                    {{c.descriptionDetail}}
+                                </option>
+
+                            </select>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Description </label>
+                        <div class="col-sm-4">
+                            <input class="form-control input-sm" ng-init="job.description  = ''" ng-model="job.description" name="desc" ng-disabled="job.descriptionCode != '28'" placeholder="If you cannot find a description above">
+
+
+
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Driver Name   </label>
+                        <div class="col-sm-4">
+
+                            <input class="form-control input-sm" ng-model="job.driverName"  name="driverName" required-message = "'*Driver Name Required'" placeholder="Enter Driver Name"   required >
+
+
+
+
+                        </div>
+
+
+                        <label class="col-sm-2 control-label">Relation</label>
+                        <div class="col-sm-4">
+
+                            <select class="form-control input-sm" ng-model="job.relation" ng-init="job.relation = 'OWNER'">
+                                <option value="OWNER">OWNER</option>
+                                <option value="SPOUSE">SPOUSE</option>
+                                <option value="DRIVER">DRIVER</option>
+                                <option value="OTHER">OTHER</option>
+
+
+
+                            </select>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">DL No.   </label>
+                        <div class="col-sm-4">
+                            <input type="text" placeholder="Enter Driver Liscense No." ng-model="job.dlNo" name="Dl" class="form-control input-sm">
+                        </div>
+
+
+
+                        <label class="col-sm-2 control-label">Relation Description   </label>
+                        <div class="col-sm-4">
+                            <input type="text" ng-model="job.relationDesc" class="form-control input-sm" ng-disabled=" job.relation != 'OTHER'"  name="realtiondsesc" placeholder = "Enter Relation Description"> 
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Damages</label>
+                        <div class="col-sm-10">
+
+                            <textarea class="form-control input-sm" ng-model="job.damages"  name="damages" required-message = "'*Damages Required'" placeholder="Enter Damages"   required >
+                            </textarea>
+
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <h2> <span class="label label-success">Assign Information  </span>  </h2>
+                    <hr>
+
+
+
+
+                    <div class="form-group" hidden="true">
+                        <label class="col-sm-2 control-label" hidden="true">Allocate Date </label>
+                        <div class="col-sm-4" hidden="true"> 
+
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" id="ad" role="button" data-toggle="dropdown" data-target="#" href="">
+                                    <input type="text" class="form-control input-sm" ng-model="job.allocDate" readonly>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel2">
+                                    <datetimepicker data-ng-model="job.allocDate"
+                                                    data-datetimepicker-config="{ dropdownSelector: '#ad' ,minView:'minute',modelType:'YYYY-MM-DD HH:mm:ss A'}"></datetimepicker>
+                                </ul>
+                            </div>
+                        </div>
+                        <label class="col-sm-2 control-label">Arrenge type </label>
+                        <div class="col-sm-4"> 
+                            <select class="form-control input-sm" ng-model = "job.arrenge" ng-init="job.arrenge = 'Arranged'">
+                                <option value="Arranged">ARRENGED</option>
+                                <option value="NotArranged">NOT ARRENGED</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Assessor Name </label>
+                        <div class="col-sm-6"     > 
+
+                            <!--ui-select2
+
+<select  ng-model="job.assessors "  style="width:100%"    class="form-control"   >
+<option value="{{a.userCode}}" ng-repeat="a in assessorsList | orderBy:'display':false" > {{a.display}} --{{a.userCode}}</option>
+</select>
+--> 
+
+                            <ui-select  ng-model="job.assessors " style="width:100%"  limit = "15" >
+
+                                <ui-select-match>
+
+                                    <span>{{$select.selected.display}}</span>
+                                </ui-select-match>
+
+                                <ui-select-choices repeat="item in (assessorsList|filter:$select.search | limitTo:$select.limit) track by item.userCode">
+                                    <span>{{item.display}}</span>    
+                                </ui-select-choices>
+
+
+                            </ui-select>
+
+
+                            <!-- -->
+
+
+
+                        </div>
+                        <label class="col-sm-2 control-label">{{job.assessors.userCode}} </label>
+
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-sm btn-info btn-block" ng-click="assesorMap(job)">Show Map</button>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Police Station   </label>
+                        <div class="col-sm-6">
+
+                            <select class="form-control input-sm" ng-model="job.policeStation" ng-init="job.policeStation = '-'" >
+
+
+                                <option value="-">-</option>
+                                <option value="{{x.title}}-{{x.vicinity}}" ng-if="x.id != '0'" ng-repeat="x in markers" ng-selected="x.templateParameter.selected">{{x.title}}-{{x.vicinity}}</option>
+                            </select>
+
+
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-sm btn-block btn-info" ng-click="showPolice(job)">Show Map</button>
+                        </div>
+
+
+                    </div>
+
+
+
+               <div class="form-group">
+                       <label class="col-sm-2 control-label">Promise Time</label>
+
+                         <div class="col-sm-2">
+                    <input  min="0" type="number" name="hours" Placeholder="Hours" ng-model="job.hours" ng-init="job.hours = 0" 
+
+class="form-control input-sm">
+                    
+                </div>
+            <div class="col-md-1"  style="margin-top:0.8%;padding-left:0cm">
+                    
+                    <i> <b> Hours and </b></i>
+                    </div>
+                <div class="col-sm-2">
+                    <input min="0" max="59" name="min" type="number" Placeholder="Minutes" ng-model="job.promise" ng-init="job.promise = 0" 
+
+class="form-control input-sm">
+                    
+                </div>
+            <div class="col-md-2"  style="margin-top:0.8%;padding-left:0cm">
+                    
+                    <i> <b> Minutes. </b></i>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+                    <h2> <span class="label label-default">Third-Party Information </span>  </h2>
+                    <hr>
+
+
+                    <!--
+
+<div class="form-group">
+<label class="col-sm-2 control-label">Name</label>
+<div class="col-sm-4">
+
+<input class="form-control" ng-model="job.thirdpartyName"  >
+
+</div>
+
+
+<label class="col-sm-2 control-label">Contact</label>
+<div class="col-sm-4">
+
+<input class="form-control" ng-model="job.thirdpartyContact"  >
+
+</div>
+
+
+</div>
+
+<div class="form-group">
+
+<label class="col-sm-2 control-label">Address</label>
+<div class="col-sm-4">
+
+<textarea class="form-control" ng-model="job.thirdpartyAddress"  >
+</textarea>
+</div>
+
+
+<label class="col-sm-2 control-label">Damages</label>
+<div class="col-sm-4">
+
+<textarea class="form-control" ng-model="job.thirdpartyDamages">
+</textarea>
+</div>
+
+</div>
+
+
+
+-->
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Third Party Details</label>
+                        <div class="col-sm-10">
+
+                            <textarea placeholder="Enter Thirdparty details all in one" class="form-control input-sm" name="thirdparty" ng-model="job.thirdParty" ></textarea>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group" hidden="true">
+                        <label class="col-sm-2 control-label">Insurance Company</label>
+                        <div class="col-sm-10">
+
+                            <input class="form-control input-sm" placeholder="Enter insurance company" ng-model="job.thirdpartyInsurance"  >
+
+                        </div>
+
+
+
+
+
+                    </div>
+                </fieldset>
+                <hr>
+                <div class="form-group">
+                    <div class="col-md-offset-8 col-md-2">
+
+                 
+                    <button type="button"  ng-click="jobInfo.reset()" class="btn  btn-sm btn-block btn-danger"    > Reset </button>  
+                    </div>
+                    <div class=" col-md-2"><!-- ng-click="intimation()" -->
+                        <button  type="submit" class="btn btn-sm btn-success btn-block" ng-disabled="saving"> Save</button>
+
+                    </div>
+                </div>
+            </form>  
+
+
+
+        </aside>
+
+
+    </div>
+    </div>

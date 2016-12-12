@@ -1,0 +1,148 @@
+ <div class="col-md-12">
+     
+     
+         <uib-accordion close-others="oneAtATime">
+  
+    <uib-accordion-group is-open="status.open">
+      <uib-accordion-heading>
+        Onsite Details <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </uib-accordion-heading>
+      
+        
+           <form class="form-horizontal"> 
+            
+        <div class="row" style="padding:0.5%" ng-hide="showItem=='ONSITE'" >
+            <div class="col-md-2"><b> Status </b></div>
+            <div class="col-md-4 text-uppercase">{{iv.intimationMain.moiType}}
+            </div>
+            
+            <div class="col-md-2"><b>Action Taken  </b></div>
+            <div class="col-md-4 text-uppercase">
+                  <temp ng-repeat = "x in intimationActions | filter: {actionCode : iv.job.actionTake}">{{x.actionType}}</temp>
+                         
+            </div>
+        </div>
+            
+            
+             <div class="form-group" ng-show="showItem=='ONSITE'"  style="padding:0.5%">
+            <label class="col-md-2 control-label"  style="text-align:left; ">  Status  </label>
+            <div class="col-md-4 text-uppercase">
+                              <select  class="form-control input-sm" ng-model="iv.job.moiType">
+
+                        <option ng-repeat="x in intimationTypeList" value="{{x.moiType}}"> {{x.moiType}}</option>
+
+
+                    </select>
+
+            </div>
+              <label class="col-md-2 control-label"  style="text-align:left; "> Action Taken  </label>
+            <div class="col-md-4 text-uppercase"> 
+                      <select class="form-control input-sm"  ng-model="iv.job.actionTake">
+
+                        <option ng-repeat=" x in intimationActions" value="{{x.actionCode}}">   
+                            {{x.actionType}}
+                        </option>
+
+
+                    </select>
+            </div>
+        </div>
+            
+
+        <div class="row" style="padding:0.5%">
+            <div class="col-md-2"><b> Place of Accident </b></div>
+            <div class="col-md-10 text-uppercase">{{iv.intimationMain.placeOfAccident}}
+            </div>
+
+        </div>
+
+        <div class="row" style="padding:0.5%">
+            <div class="col-md-2"><b> Date of Accident</b></div>
+            <div class="col-md-4 text-uppercase">{{iv.intimationMain.dateOfAccident}}
+            </div>
+            <div class="col-md-2"><b>Agent </b></div>
+            <div class="col-md-4 text-uppercase">{{iv.intimationMain.agentCode}}
+            </div>
+        </div>
+
+
+        <div class="row" style="padding:0.5%" ng-hide="showItem=='ONSITE'" >
+            <div class="col-md-2"><b> Description Code</b></div>
+            <div class="col-md-4 text-uppercase">{{iv.intimationMain.description}}<!-- issue -->
+            </div>
+            <div class="col-md-2"><b> Description </b></div>
+            <div class="col-md-4 text-uppercase">{{iv.intimationMain.description}}
+            </div>
+        </div>
+
+            
+                   <div class="form-group" ng-show="showItem=='ONSITE'"  style="padding:0.5%" >
+            <label class="col-md-2 control-label"  style="text-align:left; ">  Description Code  </label>
+            <div class="col-md-4 text-uppercase">
+                 <select class="form-control input-sm" ng-model="iv.job.descCode"  >
+
+                        <option ng-repeat="c in claimDescList" value="{{c.descriptionId}}">
+                        {{c.descriptionDetail}}
+                        </option>
+
+                    </select>
+            </div>
+              <label class="col-md-2 control-label"  style="text-align:left;"> Description  </label>
+            <div class="col-md-4 text-uppercase"> 
+               <input class="form-control input-sm"  ng-model="iv.job.description" ng-disabled="iv.job.descCode != '0'">
+            </div>
+        </div>
+
+     
+
+        <div class="row" style="padding:0.5%"  >
+            <div class="col-md-2"><b> Nearest Town</b></div>
+            <div class="col-md-10 text-uppercase">{{iv.intimationMain.placeName}}
+            </div>
+
+        </div>
+            
+            
+                <!-- <div class="form-group" ng-show="showItem=='ONSITE'"   style="padding:0.5%">
+            <label class="col-md-2 control-label   " style="text-align:left; "> Nearest Town  </label>
+            <div class="col-md-4 text-uppercase">
+                <select class="form-control"></select>
+                     </div>
+            </div> -->
+               <div ng-show="userPermission.indexOf('JOB-UPDATE-MOTOR') != -1" > 
+               <div class="form-group" ng-hide="converNoteStatus">
+               
+                <div class="col-md-offset-10 col-md-2" ng-hide="showItem=='ONSITE'">
+                    <button   class="btn btn-block btn-sm btn-info" ng-click="showItem='ONSITE'"> EDIT </button>
+                </div> 
+                       <div class="col-md-offset-8 col-md-2" ng-show="showItem=='ONSITE'">
+                           <button   class="btn btn-block btn-sm btn-default" ng-click="showItem='NONE'"> CANCEL </button>
+                             </div>  
+                   <div class=" col-md-2" ng-show="showItem=='ONSITE'">
+                       <button   class="btn btn-block btn-sm btn-success" ng-click="iv.updateIntimation()"> SAVE </button>
+                   </div>
+                   
+               </div>
+
+               </div>
+</form>
+
+        
+        
+    </uib-accordion-group>
+  </uib-accordion>
+     
+      
+ </div>
+
+<div class="col-md-12">
+ <div ng-include="'pages/intimation/intimation.view.mainInfo.acessor.html'"></div>
+</div>
+
+<div class="col-md-12">
+ <div ng-include="'pages/intimation/intimation.view.mainInfo.intimation.html'"></div>
+</div>
+
+    <div class="col-md-12">
+ <div ng-include="'pages/intimation/intimation.view.maintainInfo.driver.html'"></div>
+</div>

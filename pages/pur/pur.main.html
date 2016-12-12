@@ -1,0 +1,196 @@
+
+<section id="main-content">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="row" style="margin-bottom:0.5%">
+                <div class="col-md-6"   >
+
+                    <div class="panel panel-default" style="margin-bottom:0cm">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">MOTOR/NON-MOTOR PUR SEARCH</h3>
+
+                        </div>
+                        <div class="panel-body" style="padding-top:0cm">
+                            <form class="form-horizontal" role="form" style="font-size:80%">
+
+
+                                <div class="form-group" style="margin-bottom:0cm">
+                                    <div class="col-md-4">
+                                        <label class="  control-label"  >PUR No</label>
+
+                                        <input ng-model="search.purNo" type="text" class="form-control input-sm"    placeholder="Enter PUR Number">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="  control-label"  >Contact No</label>
+
+                                        <input ng-model="search.informer" type="text" class="form-control input-sm"    placeholder="Enter Contact No">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="  control-label"  >Vehicle No</label>
+
+                                        <input ng-model="search.vehicleNo" type="text" class="form-control input-sm"    placeholder="Enter Vehicle Number">
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom:0cm">
+                                    <div class="col-md-4">
+                                        <label class=" control-label"  >Branch</label>
+
+                                        <select class="form-control input-sm" ng-model="search.branch" ng-init="search.branch='ALL'">
+
+                                            <option value="ALL">ALL</option>
+                                            <option ng-repeat=" b in branchList" value="{{b.branchCode}}" ng-if="b.branchCode != '-'">
+
+                                                {{b.branchName}}
+                                            </option>
+
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-md-5">
+                                        <label class=" control-label"  >Customer</label>
+
+                                        <input ng-model="search.customer" type="text" class="form-control input-sm"    placeholder="Enter Customer Name">
+                                    </div>
+
+                                    <div class="   col-md-3">
+                                        <label class=" control-label"  ><br></label>
+
+                                        <button ng-disabled="searching" ng-click="singleSearch()" class="btn btn-info btn-block btn-sm"> Search</button>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </form>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="col-md-6"   >
+
+                    <div class="panel panel-default" style="margin-bottom:0cm">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">MOTOR  PUR BULK SEARCH</h3>
+
+                        </div>
+                        <div class="panel-body" style="padding-top:0cm">
+                            <form class="form-horizontal" role="form" style="font-size:80%">
+
+
+                                <div class="col-md-10">
+                                    <div class="form-group" style="margin-bottom:0cm">
+                                        <div class="col-md-6">
+                                            <label class="  control-label"  >Branch</label>
+
+                                            <select class="form-control input-sm" ng-model="bulk.branch" ng-init="bulk.branch = 'ALL'">
+                                                  <option value="ALL">ALL</option>
+                                                <option ng-repeat=" b in branchList" value="{{b.branchCode}}" ng-if="b.branchCode != '-'">
+
+                                                    {{b.branchName}}
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="  control-label"  >Status</label>
+
+                                            <select class="form-control input-sm" ng-model="bulk.status" ng-init="bulk.status = 'All'">
+                                            
+                                            <option value="All">ALL</option>
+                                            <option value="YES">Completed</option>
+                                            <option value="NO">Not Completed</option>
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="form-group" style="margin-bottom:0cm">
+                                        <div class="col-md-6">
+                                            <label class=" control-label"  >From</label>
+
+                                   
+                                                <div class="dropdown">
+                        <a class="dropdown-toggle" id="from" role="button" data-toggle="dropdown" data-target="#" href="">
+                            <input type="text" class="form-control input-sm" ng-model="bulk.from" readonly>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                            <datetimepicker data-ng-model="bulk.from"
+                                            data-datetimepicker-config="{ dropdownSelector: '#from' ,minView:'day',modelType:'YYYY-MM-DD' }" ></datetimepicker>
+                        </ul>
+                    </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <label class=" control-label"  >To</label>
+
+                                      <div class="dropdown">
+                        <a class="dropdown-toggle" id="to" role="button" data-toggle="dropdown" data-target="#" href="">
+                            <input type="text" class="form-control input-sm" ng-model="bulk.to" readonly>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                            <datetimepicker data-ng-model="bulk.to"
+                                            data-datetimepicker-config="{ dropdownSelector: '#to' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                        </ul>
+                    </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-2">
+
+                                    <div class="row" style="margin-top:90%">
+
+
+                                        <button class="btn btn-success btn-block btn-sm " ng-click="searchToday()" ng-disabled="searching"> Today</button>
+
+                                        <button class="btn btn-info btn-block btn-sm " ng-click="bulkSearch()" ng-disabled="searching"> Search</button>
+                                    </div>
+
+
+
+
+
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-12" ng-show="searching"  >
+                  <md-progress-linear   md-mode="indeterminate"></md-progress-linear>
+                    </div>
+            </div>
+            
+            
+
+
+
+            <div  ui-view name="result"> </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+

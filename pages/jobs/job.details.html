@@ -1,0 +1,290 @@
+<div class="panel   "   >
+
+
+
+    <aside class="panel-body">
+
+        <uib-tabset>
+            <uib-tab   > 
+
+                <uib-tab-heading>
+                    DEBITS <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.debits" > </i> 
+                </uib-tab-heading>
+
+                 <form  class="form-horizontal" style="margin-top:2%" >
+                <div class="form-group">
+                    <label class="col-md-offset-7 col-md-2 control-label">Search</label>
+                    <div class="col-md-3">
+                    <input class="form-control input-sm" ng-model="DSearch">
+                    </div>
+                    </div>
+                </form>
+                <table    class="table table-hover table-striped table-bordered"   >
+                    <thead>
+                        <tr>
+                            <th ng-class="'col-md-3'" >Debit No.</th>
+                            <th ng-class="'col-md-3'" >Debit Date</th>
+                            <th ng-class="'col-md-2'" >Debit Amount </th>
+                            <th ng-class="'col-md-2'" >Debit Unadjusted</th>
+                            <th ng-class="'col-md-2'" >Debit Match </th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in debitResult | filter:DSearch">
+                            <td>{{s.debitNumber}}</td>
+                            <td>{{s.debitDate}}</td>
+                            <td>{{s.debitTotal | currency:"Rs."}}</td>
+                            <td>{{s.unadjustedAmount }}</td>
+                            <td>{{s.matchingIndicator }}</td>
+
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </uib-tab>
+            <uib-tab  >
+                  <uib-tab-heading>
+    CREDITS <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.credits" > </i> 
+                        </uib-tab-heading>
+                 <form  class="form-horizontal" style="margin-top:2%" >
+                <div class="form-group">
+                    <label class="col-md-offset-7 col-md-2 control-label">Search</label>
+                    <div class="col-md-3">
+                    <input class="form-control input-sm" ng-model="CSearch">
+                    </div>
+                    </div>
+                </form>
+
+                <table    class="table table-hover table-striped table-bordered"  >
+                    <thead>
+                        <tr>
+                            <th >Credit No.</th>
+                            <th >Credit Date</th>
+                            <th >Credit Amount </th>
+
+                            <th >Credit Match </th>
+
+                            <th >Physical Refund </th>
+                            <th >Cheque In Fav </th>
+                            <th >Remarks </th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in UWCreditResult | filter:CSearch">
+
+                            <td>  {{s.creditNumber}} </td>
+                            <td>  {{s.creditDate}} </td>
+                            <td>  {{s.creditAmount | currency:"Rs. "}} </td>
+                            <td>  {{s.creditMatch}} </td>
+
+                            <td>  {{s.physicalRefund}}  </td>
+                            <td>  {{s.chequeFavour}} </td>
+                            <td>  {{s.remarks}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </uib-tab> 
+            <uib-tab  >
+  <uib-tab-heading>
+    RECIEPTS <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.reciepts" > </i> 
+                        </uib-tab-heading>
+
+                 <form  class="form-horizontal" style="margin-top:2%" >
+                <div class="form-group">
+                    <label class="col-md-offset-7 col-md-2 control-label">Search</label>
+                    <div class="col-md-3">
+                    <input class="form-control input-sm" ng-model="RSearch">
+                    </div>
+                    </div>
+                </form>
+                <table    class="table table-hover table-striped table-bordered"   >
+                    <thead>
+                        <tr>
+                            <th > Policy No.</th>
+                            <th > Voucher No.</th>
+                            <th > Created Date </th>
+
+                            <th >MAT Adjusted Amount </th>
+                            <th >Payment Mode </th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in recieptResult | filter:RSearch">
+                            <td>  {{s.policyNo}} </td>
+                            <td>  {{s.receiptNo}} </td>
+                            <td>  {{s.receiptDate}} </td>
+                            <td>  {{s.receiptAmount | currency:"Rs."}} </td>
+                            <td>  {{s.paymentMode}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </uib-tab>
+            <uib-tab  >
+  <uib-tab-heading>
+    CLAIMS <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.claims" > </i> 
+                        </uib-tab-heading>
+                 <form  class="form-horizontal" style="margin-top:2%" >
+                <div class="form-group">
+                    <label class="col-md-offset-7 col-md-2 control-label">Search</label>
+                    <div class="col-md-3">
+                    <input class="form-control input-sm" ng-model="claimSearch">
+                    </div>
+                    </div>
+                </form>
+                <table    class="table table-hover table-striped table-bordered"   >
+                    <thead>
+                        <tr>
+                            <th >Debit Credit Note No</th>
+                            <th >DCN Date</th>
+                            <th >DCN Trans Amount </th>
+                            <th >DCN Narration </th>
+                            <th >Matching Indicator </th>
+                            <th >Unadjusted Amount </th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in ClaimCreditResult | filter : claimSearch">
+
+                            <td>  {{s.debitNumber}} </td>
+                            <td>  {{s.debitDate}} </td>
+                            <td>  {{s.debitTotal  | currency:"Rs."}} </td>
+                            <td>  {{'N/A'}} </td>
+                            <td>  {{s.matchingIndicator}} </td>
+                            <td>  {{s.unadjustedAmount | currency:"Rs."}} </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </uib-tab>
+            <uib-tab  >
+
+  <uib-tab-heading>
+     SMS <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.sms" > </i> 
+                        </uib-tab-heading>
+
+                <form  class="form-horizontal" style="margin-top:2%" >
+                <div class="form-group">
+                    <label class="col-md-offset-7 col-md-2 control-label">Search</label>
+                    <div class="col-md-3">
+                    <input class="form-control input-sm" ng-model="smsSearch">
+                    </div>
+                    </div>
+                </form>
+                <table    class="table table-hover table-striped table-bordered"  >
+                    <thead>
+                        <tr>
+                            <th >MOI Number</th>
+
+                            <th >Message Body</th>
+
+                            <th >Date </th>
+                            <th >Type</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in SMSResult | filter : smsSearch" style="font-size:80%">
+
+                            <td>{{s.moiNo}}</td>
+                            <td>{{s.message}}</td>
+                            <td>{{s.systemDate}}</td>
+                            <td>{{s.type}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </uib-tab>
+            <uib-tab  >
+
+  <uib-tab-heading>
+   CLAUSES <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.clauses" > </i> 
+                        </uib-tab-heading>
+
+                 <form  class="form-horizontal" style="margin-top:2%" >
+                <div class="form-group">
+                    <label class="col-md-offset-7 col-md-2 control-label">Search</label>
+                    <div class="col-md-3">
+                    <input class="form-control input-sm" ng-model="CLSearch">
+                    </div>
+                    </div>
+                </form>
+                <table    class="table table-hover table-striped table-bordered"   >
+                    <thead>
+                        <tr>
+                            <th >Clauses</th>
+                            <th >Excess</th>
+                            <th >Limits</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in ClauseResult | filter:CLSearch">
+
+                            <td>{{s.clauses}}</td>
+                            <td>{{s.excess}}</td>
+                            <td>{{s.limits}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </uib-tab>
+            <uib-tab  >
+
+                  <uib-tab-heading>
+                      
+                   
+    WARRANTIES<i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.warranties" > </i> 
+                        </uib-tab-heading>
+                
+                    <form  class="form-horizontal" style="margin-top:2%" >
+                <div class="form-group">
+                    <label class="col-md-offset-7 col-md-2 control-label">Search</label>
+                    <div class="col-md-3">
+                    <input class="form-control input-sm" ng-model="WSearch">
+                    </div>
+                    </div>
+                </form>
+                <table    class="table table-hover table-striped table-bordered"  >
+                    <thead>
+                        <tr>
+                            <th >Warranty Details.</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in WarrentyResult | filter:WSearch">
+                            <td>{{s.warranties}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+            </uib-tab>
+
+
+        </uib-tabset>
+
+    </aside>
+</div>

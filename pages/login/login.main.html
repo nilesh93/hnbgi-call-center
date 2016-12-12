@@ -1,0 +1,56 @@
+ <section class="container animated fadeInUp">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div id="login-wrapper" style="margin-top:10%">
+                    <header>
+                        <div class="brand">
+                            <a href="index.html" class="logo">
+                              
+                          
+                            
+                              <a href="index.html" class="logo">
+                               <img ng-src="img/logo/logo.png"> 
+                            <br>
+                        </a>
+                            
+                        </div>
+                        
+                        
+                    </header>
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">     
+                           Sign In
+                        </h3>
+                        </div>
+                        <div class="panel-body">
+                            <p> Login to access your account.</p>
+                            <form class="form-horizontal" name="log" role="form" novalidate angular-validator angular-validator-submit='login()'> 
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" id="email" placeholder="Username" name="un" ng-model="lc.login.un" required-message = "'*Username Required '"   required>
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" name="pw" ng-model="lc.login.pw" required-message = "'*Password Required '"   required>
+                                        <i class="fa fa-lock"></i>
+                      
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-info btn-block">LOGIN</button>
+                                  
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+  

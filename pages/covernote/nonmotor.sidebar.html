@@ -1,0 +1,41 @@
+
+<br>
+<div class="" ng-init="type=(userPermission.indexOf('COVERNOTE-INSERT-NONMOTOR') != -1)?'INSERT':'PENDING'">
+    <div class="col-md-2 col-sm-12" id="compose-wrapper">
+        <div class="panel panel-primary ">
+            <div class="panel-heading ">
+                <h5 class="page-title" style="color:#fff" >NON-MOTOR </h5> 
+                <h4 class="page-title"  style="color:#fff">COVERNOTE</h4>
+            </div>
+            <aside class="panel-body" style="padding-top:0cm" ng-init="policyStat = 'GENERAL'">
+                <ul class="nav nav-pills nav-stacked compose-nav" style="margin-top:0cm">
+
+
+                    <li  ng-show="userPermission.indexOf('COVERNOTE-INSERT-NONMOTOR')" ng-class="policyStat == 'INSERT'?'active':''">
+                        <a    href=""  ng-click=" type = 'INSERT'"> <i class="fa fa-plus-circle"></i> &nbsp  
+                            INSERT
+                        </a>
+                    </li>
+                    <li  ng-class="policyStat == 'PENDING'?'active':''" ng-show="userPermission.indexOf('COVERNOTE-PENDING-NONMOTOR')">
+                        <a     href=""  ng-click=" type='PENDING'"     > <i class="fa fa-exclamation-circle"></i> &nbsp  
+                            PENDING <i class="fa fa-refresh fa-spin   fa-fw pull-right" aria-hidden="true"  ng-show="loading.intimations"> </i> 
+                              <span class="label label-default label-circle pull-right" ng-hide="loading.intimations">{{searchResult.length}}</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </aside>
+        </div>
+
+
+    </div>
+
+    <div class="col-md-10 col-sm-12">
+
+        <div ng-class="type == 'INSERT'?'animated bounceInUp':''" ng-show="type == 'INSERT'" >
+          <div ng-include="'pages/covernote/nonmotor-insert.html'"></div>
+        </div>
+        <div ng-class="type == 'PENDING'?'animated bounceInUp':''" ng-show="type == 'PENDING'" >
+ <div ng-include="'pages/covernote/nonmotor-pending.html'"></div>
+        </div></div>

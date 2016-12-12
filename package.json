@@ -1,0 +1,26 @@
+{
+  "name": "hnbgi-core-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://ec2-52-77-59-85.ap-southeast-1.compute.amazonaws.com/claim-app/angular-frontend.git"
+  },
+  "author": "Nilesh Jayanandana",
+  "license": "ISC",
+  "dependencies": {
+    "angular-bootstrap-datetimepicker": "^1.0.1",
+    "angular-http-auth": "^1.3.0",
+    "angularfire": "^2.0.1",
+    "firebase": "^3.1.0",
+    "moment": "^2.13.0",
+    "ng-repeat-owl-carousel": "0.0.2"
+  }
+}

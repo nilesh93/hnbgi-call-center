@@ -1,0 +1,133 @@
+
+<br>
+
+<div class="row" style="">
+
+    <div class="container-fluid animated zoomInUp">
+
+        <div class="col-md-12">
+            <div class="panel  " ng-class="panelClass">
+                <div class="panel-heading">
+                    
+                    <h4 class="title" style="color:white">{{panelHead}} - {{sub}} <small style="color:white;">| {{dashInfoList.length}} jobs</small></h4>
+                  
+                
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="row">
+                    <div class="col-md-7 "><!--
+                    <form class="form-horizontal" style="font-size:90%">
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label class="control-label col-md-2" style="padding=bottom:1%">Main</label>    
+                            <div class="col-md-10">
+                            
+                            <select class="form-control input-sm" ng-change="init(search.main,search.sub)" ng-model="search.main">
+                            <option ng-repeat=" x in types" value="{{x.id}}">
+                                
+                                {{x.name}}
+                                
+                            </option>    
+                                
+                            </select>
+                            
+                            </div>
+                            
+                        </div>
+                        
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                        <label class="control-label col-md-3" style="padding=bottom:1%">Type</label>    
+                            <div class="col-md-9">
+                            
+                            <select class="form-control input-sm" ng-change="init(search.main,search.sub)" ng-model="search.sub">
+                            <option ng-repeat=" x in labels" value="{{x}}">
+                                
+                                {{x}}
+                                
+                            </option>    
+                                
+                            </select>
+                            
+                            </div>
+                            
+                        </div>
+                        
+                        
+                        </div>
+                        <div class="col-md-2" >
+                        <!--
+                        <button class="btn btn-success btn-block btn-sm">Load</button> 
+                        </div>
+                        
+                        
+                        </form>
+                    
+                    -->
+                    </div>
+                    <div class="col-md-5">
+                        <form class="form-horizontal">
+                            <div class="form-group" style="font-size:90%">
+
+                                <label class="control-label col-md-4">Search</label>
+                                <div class="col-md-8">
+
+
+                                    <input class="form-control input-sm" ng-model="searchInfo">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    </div>
+                <table class="table table-hover table-bordered table-condensed"  >
+
+
+                    <thead style="font-size:90%">
+                        <tr class=" " style="">        <th>Job Number</th>
+                            <th>Assessor Code</th>
+                            <th>Location</th>
+
+                            <th>Job Assigned</th>
+                            <th>Job Start</th>
+                            <th>Job Close</th>
+                            <th>ACR</th>
+                            <th>Cust. Name</th>
+                            <th>Cust. Contact</th>
+                             <th style="width:80px"></th> 
+                        </tr>
+
+                    </thead>
+
+                    <tbody style="font-size:80%">
+
+                        <tr ng-repeat="x in dashInfoList | filter:searchInfo">
+                            <td>{{x.jobNumber}}</td>     
+                            <td>{{x.assessorCode}}</td>     
+                            <td>{{x.accidentLocation}}</td>     
+                            <td>{{x.assignTime}}</td>     
+                            <td>{{x.startDate}} {{x.startTime}} </td>     
+                            <td>{{x.endDate}} {{x.endTime}}</td>  
+                            <td>{{x.actualCostRepair | currency  :"Rs "}}</td>
+                            <td>{{x.customerName}}</td>     
+                            <td>{{x.customerMobile}}</td>     
+                             <td><button ng-click="viewIntimation(x.jobNumber)" class="btn btn-sm btn-success btn-block">View</button> </td>    
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

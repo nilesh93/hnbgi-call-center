@@ -1,0 +1,119 @@
+
+
+<!--
+<ul class="nav bs-sidenav" >
+<li>
+<a du-smooth-scroll="modals-examples">ssss </a>
+<ul class="nav">
+<li><a href="#modals-examples">Examples</a></li>
+<li><a href="#modals-usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+
+-->
+<div class="row">
+    <div class="col-md-2 col-sm-12" id="compose-wrapper">
+        <div class="panel panel-primary ">
+            <div class="panel-heading ">
+                <h5 class="page-title" style="color:#fff" >POLICY NO.</h5>
+                <h4 class="page-title"  style="color:#fff">{{activePolicyGeneral.policyNo}}</h4>
+            </div>
+    
+            <aside class="panel-body"  style="padding-top:0cm" ng-init="policyStat = 'GENERAL'">
+                <ul class="nav nav-pills nav-stacked compose-nav" style="margin-top:0cm">
+                    <li class="ng-primary"  style="height:10%" >
+                        <a   class="bussiness" ng-show="activePolicyGeneral.businessParty == 'HNB_STAFF'">  
+                            <center>HNB STAFF</center>
+
+                        </a>
+                        <a   class="bussiness" ng-show="activePolicyGeneral.businessParty == 'ASSU_STAFF'">  
+                            <center>ASSU. STAFF</center>
+
+                        </a>
+                    </li>
+
+
+                    <li class="ng-primary"  style="height:10%" ng-show="activePolicyGeneral.vipFlag == 'YES'">
+                        <a   class="vip">  <center>VIP CUSTOMER</center>
+
+                        </a>
+                    </li>
+
+
+                    <li    ng-class="policyStat == 'GENERAL'?'active':''">
+                        <a   href=""  ng-click=" policyStat = 'GENERAL'" > <i class="fa fa-info-circle"></i> &nbsp General  <i class="fa fa-refresh fa-spin   fa-fw pull-right" aria-hidden="true"  ng-show="loading.policyShow"> </i>
+
+                        </a>
+                    </li>
+                    <li  ng-class="policyStat == 'DETAILS'?'active':''">
+                        <a href=""  ng-click=" policyStat = 'DETAILS'" > <i class="fa fa-book"></i> &nbsp Details <i class="fa fa-refresh fa-spin   fa-fw pull-right" aria-hidden="true"  ng-show="  loading.warranties || laoding.debits || loading.credits ||   loading.clauses"> </i>
+                        </a>
+                    </li>
+                    <li  ng-class="policyStat == 'INTIMATIONS'?'active':''">
+                        <a   href=""   ng-click=" policyStat = 'INTIMATIONS'"> <i class="fa fa-cog"></i>  &nbsp Intimations <i class="fa fa-refresh fa-spin   fa-fw pull-right" aria-hidden="true"  ng-show="loading.intimations"> </i>
+
+
+                            <span class="label label-default label-circle pull-right" ng-hide="loading.intimations">{{intiResults.length}}</span>
+                        </a>
+                    </li>
+                    <li  ng-class="policyStat == 'JOB'?'active':''" ng-show="userPermission.indexOf('JOB-INSERT-NONMOTOR') != -1">
+                        <a   href=""  ng-click=" policyStat = 'JOB'"> <i class="fa fa-plus-circle"></i> &nbsp New Job </a>
+                    </li>
+
+
+                </ul>
+            </aside>
+        </div>
+        <div class=" ">
+           <img ng-if="activePolicyGeneral.productCode == 'TAMH'  " ng-src="img/policy/myhome.png" class="img img-responsive">
+            <img ng-if="activePolicyGeneral.productCode == 'TTM' || activePolicyGeneral.productCode == 'TAST'" ng-src="img/policy/travelmax.png" class="img img-responsive">   
+        </div>
+
+
+    </div>
+
+    <div class="col-md-10 col-sm-12">
+        <!-- general Info -->
+        <div ng-class="policyStat == 'GENERAL'?'animated bounceInUp':''" ng-show="policyStat == 'GENERAL'" >
+            <div ng-include="'pages/jobs/job.nonMotorGeneral.html'"></div>
+
+        </div>
+
+
+        <!-- end general Info -->
+        <!-- policy Details -->
+
+        <div ng-class="policyStat == 'DETAILS' ?'animated bounceInUp':''" ng-show="policyStat == 'DETAILS' " style="font-size:90%">
+
+            <div ng-include="'pages/jobs/job.nonMotorDetails.html'"></div>
+
+        </div>
+
+
+        <!-- end  policy Details -->
+        <!-- Initimations -->
+
+
+        <div ng-class="policyStat == 'INTIMATIONS'?'animated bounceInUp':''" ng-show="policyStat == 'INTIMATIONS'">
+
+            <div ng-include="'pages/jobs/job.nonMotorIntimationList.html'"></div>
+
+        </div>
+
+
+        <!-- end  Intimations -->
+        <!-- Add Job Form -->
+
+        <div ng-class="policyStat == 'JOB'?'animated bounceInUp':''" ng-show="policyStat == 'JOB'">
+
+            <div ng-include="'pages/jobs/job.nonMotorIntimationForm.html'"></div>
+
+        </div>
+
+        <!--End Job Form -->
+
+    </div>
+
+
+</div>

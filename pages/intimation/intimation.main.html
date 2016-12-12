@@ -1,0 +1,62 @@
+
+<section id="main-content">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="panel panel-default" style="font-size:80%">
+                <div class="panel-body">
+                    <div class=" ">
+                        <form class="form-vertical" role="form" name="int" novalidate angular-validator angular-validator-submit='search()'>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail2">Intimation Number</label>
+                                    <input type="text" class="form-control input-sm" ng-model="it.intiForm.intimation_num"   placeholder="Enter Intimation Number">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail2">Policy No</label>
+                                    <input type="text" class="form-control input-sm" ng-model="it.intiForm.policy_num"   placeholder="Enter Policy Number">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail2">Policy Holder</label>
+                                    <input type="text" class="form-control input-sm" ng-model="it.intiForm.cus_name"   placeholder="Enter Customer Name">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail2">Vehicle No.</label>
+                                    <input type="text" class="form-control input-sm"   placeholder="Enter Vehicle No." ng-model="it.intiForm.v_num" >
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail2">Contact No</label>
+                                    <input ng-model="it.intiForm.contact_num"  type="text" class="form-control input-sm"  placeholder="Enter Contact No.">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-1" style="margin-top:2%">
+
+                                <button type="submit" class="btn btn-sm   btn-block btn-primary"   ng-disabled="searching">Search</button>
+        
+
+                            </div>
+                        </form>
+    <md-progress-linear  ng-show="searching" md-mode="indeterminate"></md-progress-linear>
+                    </div>
+
+                </div>
+            </div>
+            <div  ui-view name="result"> </div>
+
+        </div>
+    </div>
+</section>

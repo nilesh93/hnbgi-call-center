@@ -1,0 +1,67 @@
+  
+
+<div class="panel panel-default" style="font-size:90%">
+    <div class="panel-heading">
+        <h3 class="panel-title">Uploaded Documents</h3>
+
+    </div>
+    <div class="panel-body" >
+        <table class="table table-hover   table-condensed table-striped table-bordered">
+        <thead>
+            
+            <td> <b>Document Name </b></td>
+            <td> <b>Document Type </b></td>
+            <td> <b>Uploaded Date </b></td>
+            <td> <b>Uploaded User </b></td>
+            <td> </td>
+            </thead>
+        <tbody>
+        <tr ng-repeat="x in iv.docList">
+            
+        <td>{{x.documentName.trim()}}</td>    
+        <td>{{x.documentType.trim()}}</td>    
+        <td>{{x.uploadDate}}</td>    
+        <td>{{x.uploadUser}}</td>
+            <td><a  class="btn btn-success btn-block btn-sm">View</a ></td>
+        </tr>
+            </tbody>
+        
+        </table>
+    </div>
+</div>
+
+<div class="panel panel-default" style="font-size:90%">
+    <div class="panel-heading">
+        <h3 class="panel-title">Upload Documents</h3>
+
+    </div>
+    <div class="panel-body" >
+<form class="dropzone"
+        method="post"
+        enctype="multipart/form-data"
+        action ="http://192.168.5.117:8080/motorengineering/uploadFiles"
+        ng-dropzone
+        dropzone="iv.dropzone"
+        dropzone-config="iv.dropzoneConfig"
+        event-handlers="{ 'addedfile': iv.dzAddedFile, 'error': iv.dzError }"
+      >
+    
+  
+  </form>
+        
+        <div class="row">
+                <label class="col-sm-2 control-label" style="padding-top:0.4%">Inspections</label>
+                <div class="col-sm-5">
+                    
+                    <select class="form-control" ng-model="iv.eng.inspectionCode" ng-init="iv.doc.inspectionCode = '-'">
+                      <option value="{{x.inspectionCode}}" ng-repeat="x in inspectionTypeList">{{x.inspectionDescription}}</option>
+
+                    </select>
+
+                </div>
+            <div class="col-md-2">
+          <button type="button" class="btn btn-success "  ng-click="iv.upload()">Upload</button>
+                </div>
+        </div>
+    </div>
+</div>

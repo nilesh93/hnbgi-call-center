@@ -1,0 +1,50 @@
+{
+  "name": "angular-selectize.js",
+  "main": "angular-selectize.js",
+  "version": "1.4.3",
+  "authors": [
+    "Evan Oxfeld <eoxfeld@gmail.com>"
+  ],
+  "description": "Angular Selectize directive for a hybrid textbox + <select> box. Supports ngOptions and two-way bindings.",
+  "keywords": [
+    "angular",
+    "selectize",
+    "angular-selectize",
+    "ng-selectize",
+    "select",
+    "input",
+    "tagging",
+    "tag",
+    "combo",
+    "box",
+    "combobox",
+    "selectbox"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "selectize": ">= 0.10.1 < 0.12.0",
+    "angular": "^1.2.5"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.2.5",
+    "jquery": "^2.1.0"
+  },
+  "homepage": "https://github.com/EvanOxfeld/angular-selectize.js",
+  "_release": "1.4.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.4.3",
+    "commit": "7aa022f378b1aacc344090a4ca4295474cb1bd53"
+  },
+  "_source": "https://github.com/EvanOxfeld/angular-selectize.js.git",
+  "_target": "^1.4.3",
+  "_originalSource": "angular-selectize.js",
+  "_direct": true
+}

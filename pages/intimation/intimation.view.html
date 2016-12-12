@@ -1,0 +1,111 @@
+<div class="row">
+
+    <div class="col-md-2 col-sm-12" id="compose-wrapper">
+        <div class="panel panel-primary ">
+            <div class="panel-heading ">
+                <h5 class="page-title" style="color:#fff" >MOI NO.</h5>
+                <h4 class="page-title"  style="color:#fff">{{iv.intimationMain.moiNo}}</h4>
+            </div>
+            <aside class="panel-body" style="padding-top:0cm" ng-init="intiStat = 'GENERAL'">
+                <ul class="nav nav-pills nav-stacked compose-nav" style="margin-top:0cm">
+
+                    <li class="ng-primary"  style="height:10%" >
+                        <a   class="vip" ng-show="activePolicyGeneral.vipFlag == 'YES'">  <center>VIP CUSTOMER</center>
+
+                        </a>
+                    </li>
+
+                    <li class="ng-primary"  style="height:10%" >
+                        <a   class="bussiness" ng-show="activePolicyGeneral.businessParty == 'HNB_STAFF'">  
+                            <center>HNB STAFF</center>
+
+                        </a>
+                        <a   class="bussiness"  ng-show="activePolicyGeneral.businessParty == 'ASSU_STAFF'">  
+                            <center>ASSU. STAFF</center>
+
+                        </a>
+                    </li>
+                    <li    ng-class="intiStat == 'GENERAL'?'active':''">
+                        <a   href=""  ng-click=" intiStat = 'GENERAL'" > <i class="fa fa-info-circle"></i> &nbsp General  <i class="fa fa-refresh fa-spin   fa-fw pull-right" aria-hidden="true"  ng-show="loading.general"> </i>
+
+
+                        </a>
+                    </li>
+                    <li  ng-class="intiStat == 'ENG'?'active':''" ng-show="userPermission.indexOf('ENG-INSERT') != -1">
+                        <a href=""  ng-click="intiStat = 'ENG'" > <i class="fa fa-cogs"></i> &nbsp Engineering
+                        </a>
+                    </li>
+
+
+                    <li  ng-class="intiStat == 'STEPS'?'active':''">
+                        <a href=""  ng-click="intiStat = 'STEPS'" > <i class="fa fa-th-list"></i> &nbsp   Inspections  <i class="fa fa-refresh fa-spin   fa-fw pull-right" aria-hidden="true"  ng-show="loading.steps"> </i>
+                            <span class="label label-default label-circle pull-right" ng-hide="loading.steps">{{iv.motorStepsList.length}}</span>
+                        </a>
+                    </li>
+
+
+                    <li  ng-class="intiStat == 'IMG'?'active':''">
+                        <a href=""  ng-click="intiStat = 'IMG'" > <i class="fa fa-picture-o"></i> &nbsp Images  <i class="fa fa-refresh fa-spin   fa-fw pull-right" aria-hidden="true"  ng-show="loading.images"> </i>
+
+                            <span class="label label-default label-circle pull-right" ng-hide="loading.images">{{imgCount}}</span>
+
+                        </a>
+                    </li>
+
+                  <!--  <li  ng-class="intiStat == 'DOC'?'active':''">
+                        <a href=""  ng-click="intiStat = 'DOC'" > <i class="fa fa-file-text"></i> &nbsp Documents
+
+                            <i class="fa fa-refresh fa-spin   fa-fw pull-right" aria-hidden="true"  ng-show="loading.doc"> </i>
+
+                            <span class="label label-default label-circle pull-right" ng-hide="loading.doc">{{iv.docList.length}}</span>
+                        </a>
+                    </li> -->
+
+                </ul>
+            </aside>
+        </div>
+
+        <div class=" ">
+            <img ng-if="activePolicyGeneral.productCode == 'TMOTOR' ||activePolicyGeneral.productCode == 'TMEXTRA' " ng-src="img/policy/takaful.png" class="img img-responsive">
+            <img ng-if="activePolicyGeneral.productCode == 'MEXTRA'" ng-src="img/policy/mx.png" class="img img-responsive">   
+            <img ng-if="activePolicyGeneral.productCode == 'MOTOR'" ng-src="img/policy/mg.jpg" class="img img-responsive">
+
+        </div>
+    </div>
+
+    <div class="col-md-10">
+
+
+        <div ng-class="intiStat == 'GENERAL'?'animated bounceInUp':''" ng-show="intiStat == 'GENERAL'">
+            <div ng-include="'pages/intimation/intimation.view.mainInfo.html'"></div>
+
+        </div>
+
+
+        <div ng-class="intiStat == 'ENG'?'animated bounceInUp':''" ng-show="intiStat == 'ENG'">
+            <div ng-include="'pages/intimation/intimation.view.eng.html'"></div>
+
+        </div>
+
+
+        <div ng-class="intiStat == 'DOC'?'animated bounceInUp':''" ng-show="intiStat == 'DOC'">
+            <div ng-include="'pages/intimation/intimation.view.doc.html'"></div>
+
+        </div>
+
+        <div ng-class="intiStat == 'STEPS'?'animated bounceInUp':''" ng-show="intiStat == 'STEPS'">
+            <div ng-include="'pages/intimation/intimation.view.steps.html'"></div>
+
+        </div>
+
+        <div ng-class="intiStat == 'IMG'?'animated bounceInUp':''" ng-show="intiStat == 'IMG'">
+            <div ng-include="'pages/intimation/intimation.view.images.html'"></div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+

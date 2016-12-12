@@ -1,0 +1,439 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Inspection - {{assessor.inspectionType}}</h4>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12" align="center" ng-if="img.length >0">
+
+                <div style="height: 305px">
+                    <div uib-carousel active="0" interval="5000" no-wrap="false">
+                        <div uib-slide ng-repeat="x in img track by img.id" index="$index">
+                            <img ng-src="{{slide.href}}" style="margin:auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="img.length == 0">
+                <div class="col-md-12" style="margin-top:2%">
+
+                </div>
+                <div class="alert alert-dismissible alert-warning">
+
+                    <h4>Sorry!</h4>
+                    <p>No Images Found!</p>
+                </div>
+            </div>
+        </div>
+
+
+        <uib-tabset>
+            <uib-tab>
+
+                <uib-tab-heading>
+                    Intimation Details
+                </uib-tab-heading>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-body" style="font-size : 13px;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-5"><b>MOI no</b></div>
+                                            <div class="col-md-7">{{intimation.moiNo}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Date Of Acc</b></div>
+                                            <div class="col-md-7"><span class="label" ng-class="policydetails.policyStatus =='ACTIVE POLICY' ? 'label-success':'label-danger'">{{intimation.dateOfAccident}}</span></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Intimation Date</b></div>
+                                            <div class="col-md-7">{{intimation.intimateDate}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Place of Accident</b></div>
+                                            <div class="col-md-7">{{intimation.placeOfAccident}}</div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Call Date</b></div>
+                                            <div class="col-md-7">{{intimation.callDate}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Caller Name</b></div>
+                                            <div class="col-md-7">{{intimation.callerName}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Caller Phone</b></div>
+                                            <div class="col-md-7">{{intimation.mobileNo}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Driver Name</b></div>
+                                            <div class="col-md-7">{{intimation.driverName}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>License #</b></div>
+                                            <div class="col-md-7">{{intimation.licenseNumber}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Relationship</b></div>
+                                            <div class="col-md-7">{{intimation.relationTypeOfDriver}}</div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Police Station</b></div>
+                                            <div class="col-md-7">{{intimation.policeName}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Damages</b></div>
+                                            <div class="col-md-7">{{intimation.detailOfDamage}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Description</b></div>
+                                            <div class="col-md-7">{{intimation.description}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>3rd party</b></div>
+                                            <div class="col-md-7">{{intimation.thirdPartyDetails}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>USERID</b></div>
+                                            <div class="col-md-7">{{intimation.userId}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Comment</b></div>
+                                            <div class="col-md-7" style="font-size : 10px;"><i>{{intimation.comment}}</i></div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>ACR @ CC</b></div>
+                                            <div class="col-md-7">{{intimation.actualCostRepair | currency: "Rs."}}</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-5"><b>ACR @ DutyOfficer</b></div>
+                                            <div class="col-md-7">{{intimation.dutyOfficerACR | currency: "Rs."}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b> DutyOfficer Comment</b></div>
+                                            <div class="col-md-7">{{intimation.dutyOfficerComment}}</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </uib-tab>
+
+            <uib-tab>
+
+                <uib-tab-heading>
+                    Policy Details
+                </uib-tab-heading>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-body" style="font-size : 13px;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Policy No</b></div>
+                                            <div class="col-md-7">{{policy.policyNo}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Date from</b></div>
+                                            <div class="col-md-7"><span class="label" ng-class="policydetails.policyStatus =='ACTIVE POLICY' ? 'label-success':'label-danger'">{{policy.effectiveDate}}</span></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Date to </b></div>
+                                            <div class="col-md-7"> {{policy.expiryDate}}</div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Policy Type</b></div>
+                                            <div class="col-md-7">{{policy.policyType}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Policy Status</b></div>
+                                            <div class="col-md-7">{{policy.policyStatus}}</div>
+                                        </div>
+
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Customer Name</b></div>
+                                            <div class="col-md-7">{{policy.insuredName}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Customer NIC</b></div>
+                                            <div class="col-md-7">{{policy.insuredhNic}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Customer Tel</b></div>
+                                            <div class="col-md-7">{{policy.insuredMobile}}</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-5"><b>VIP</b></div>
+                                            <div class="col-md-7">
+                                                <label ng-if="policy.vipFlag" class="label label-success">Yes</label>
+                                                <label ng-if="!policy.vipFlag" class="label label-danger">No</label>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Vehicle No.</b></div>
+                                            <div class="col-md-7">{{policy.vehicleNo}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Make</b></div>
+                                            <div class="col-md-7">{{policy.vehicleMake}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Model</b></div>
+                                            <div class="col-md-7">{{policy.vehicleModel}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Category</b></div>
+                                            <div class="col-md-7">{{policy.vehicleCatagory}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Year</b></div>
+                                            <div class="col-md-7">{{policy.makeYear}}</div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </uib-tab>
+
+
+            <uib-tab>
+
+                <uib-tab-heading>
+                    Assessor
+                </uib-tab-heading>
+
+                <div class="row">
+                    <div class="col-md-12" style="margin-top:2%">
+                        <table class="table table-condensed table-bodered table-striped table-hover" align="center" style="font-size : 13px;">
+
+                            <tr align="Center" class="active">
+                                <th>Assessor</th>
+                                <th>{{ass.name}}</th>
+                            </tr>
+                            <tr align="Center" class="">
+                                <th>Phone</th>
+                                <th>{{ass.contact}}</th>
+                            </tr>
+                            <tr align="Center" class="">
+                                <th>Assessor Code</th>
+                                <th>{{ass.userCode}}</th>
+                            </tr>
+                            <tr align="Center" class="">
+                                <th>Assign time</th>
+                                <th>{{assessor.assignTime}}</th>
+                            </tr>
+                            <tr align="Center" class="">
+                                <th>Job start time</th>
+                                <th>{{assessor.startTime}}</th>
+                            </tr>
+                            <tr align="Center" class="">
+                                <th>job close time</th>
+                                <th>{{assessor.endTime}}</th>
+                            </tr>
+
+
+                        </table>
+
+                    </div>
+                </div>
+
+            </uib-tab>
+
+
+            <uib-tab>
+
+                <uib-tab-heading>
+                    Previous Accident
+                </uib-tab-heading>
+                <div ng-if="lastAccident" class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-body" style="font-size : 13px;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-5"><b>MOI no</b></div>
+                                            <div class="col-md-7">{{lastAccident.moiNo}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Date Of Acc</b></div>
+                                            <div class="col-md-7"><span class="label" ng-class="policydetails.policyStatus =='ACTIVE POLICY' ? 'label-success':'label-danger'">{{lastAccident.dateOfAccident}}</span></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Intimation Date</b></div>
+                                            <div class="col-md-7">{{lastAccident.intimateDate}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Place of Accident</b></div>
+                                            <div class="col-md-7">{{lastAccident.placeOfAccident}}</div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Call Date</b></div>
+                                            <div class="col-md-7">{{lastAccident.callDate}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Caller Name</b></div>
+                                            <div class="col-md-7">{{lastAccident.callerName}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Caller Phone</b></div>
+                                            <div class="col-md-7">{{lastAccident.mobileNo}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Driver Name</b></div>
+                                            <div class="col-md-7">{{lastAccident.driverName}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>License #</b></div>
+                                            <div class="col-md-7">{{lastAccident.licenseNumber}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Relationship</b></div>
+                                            <div class="col-md-7">{{lastAccident.relationTypeOfDriver}}</div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Police Station</b></div>
+                                            <div class="col-md-7">{{lastAccident.policeName}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Damages</b></div>
+                                            <div class="col-md-7">{{lastAccident.detailOfDamage}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Description</b></div>
+                                            <div class="col-md-7">{{lastAccident.description}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>3rd party</b></div>
+                                            <div class="col-md-7">{{lastAccident.thirdPartyDetails}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>USERID</b></div>
+                                            <div class="col-md-7">{{lastAccident.userId}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>Comment</b></div>
+                                            <div class="col-md-7" style="font-size : 10px;"><i>{{lastAccident.comment}}</i></div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-5"><b>ACR @ CC</b></div>
+                                            <div class="col-md-7">{{lastAccident.actualCostRepair | currency: "Rs."}}</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-5"><b>ACR @ DutyOfficer</b></div>
+                                            <div class="col-md-7">{{lastAccident.dutyOfficerACR | currency: "Rs."}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"><b> DutyOfficer Comment</b></div>
+                                            <div class="col-md-7">{{lastAccident.dutyOfficerComment}}</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div ng-if="!lastAccident">
+                    <div class="col-md-12">
+
+                    </div>
+                    <div class="alert alert-dismissible alert-warning" style="margin-top:2%">
+
+                        <h4>Sorry!</h4>
+                        <p>No Previous Accidents Found!</p>
+                    </div>
+                </div>
+
+            </uib-tab>
+
+        </uib-tabset>
+
+
+        <div class="row" align="">
+            <div class="col-md-12" align="right">
+                <div class="form-group">
+                    <label style="font-size : 11px;" class="control-label">ACR </label>
+                    <input class="form-control input-sm" style="max-width : 300px;" ng-model="insert.acr" type="number" value="0">
+                </div>
+                <div class="form-group">
+                    <label style="font-size : 11px;" class="control-label">Comment </label>
+                    <textarea style="max-width : 500px;" class="form-control input-sm" ng-model="insert.comment"></textarea>                    </textarea>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancel()">Close</button>
+    <button class="btn btn-success " ng-click="dutyUpdate()">Save</button>
+
+
+
+</div>

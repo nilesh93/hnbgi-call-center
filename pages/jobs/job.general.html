@@ -1,0 +1,251 @@
+      <div class="row"   >
+
+            <div class="col-md-7"  >
+
+
+                <div class="panel   panel-primary" style="font-size:90%" >
+                    <div class="panel-heading">
+                        <h3 class="page-title" style="color:#fff">General Information </h3>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <div class="col-md-12 "  >
+
+                            <div class="row">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Policy No. </b></div>
+                                <div class="col-md-9 text-uppercase">{{activePolicyGeneral.policyNo}}</div>
+                            </div>
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Client Name </b></div>
+                                <div class="col-md-9 text-uppercase">{{activePolicyGeneral.insuredName}}</div>
+                            </div>
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Client NIC </b></div>
+                                <div class="col-md-3 text-uppercase"> 
+                                    {{activePolicyGeneral.insuredNic}}
+
+                                </div>
+                                <div class="col-md-2" style="padding-left:0cm"> <b>Contact </b></div>
+                                <div class="col-md-3"> 
+
+                                    {{activePolicyGeneral.contactNo}}
+
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Address </b></div>
+                                <div class="col-md-9 text-uppercase">{{activePolicyGeneral.insuredAddress}}</div>
+                            </div>
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Effective Date </b></div>
+                                <div class="col-md-3">
+                                    <span class="label label-info text-uppercase">
+                                        {{activePolicyGeneral.effectiveDate}}
+                                    </span>
+                                </div>
+                                <div class="col-md-2" style="padding-left:0cm"> <b>Expiry  Date </b></div>
+                                <div class="col-md-3"> 
+                                    <span class="label label-warning text-uppercase">
+                                        {{activePolicyGeneral.expiryDate}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>Policy Type </b></div>
+                                <div class="col-md-9 text-uppercase">
+                                     
+                                        {{activePolicyGeneral.policyType}}
+                                    
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>Branch Code </b></div>
+                                <div class="col-md-9 text-uppercase">{{activePolicyGeneral.assuranceCode}}</div>
+                            </div>
+
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Status </b></div>
+                                <div class="col-md-9 text-uppercase"> 
+                                       <span class="label  text-uppercase" ng-class="activePolicyGeneral.policyStatus == 'ACTIVE POLICY' ? 'label-success': activePolicyGeneral.policyStatus == 'PPW CANC' ? 'label-info':'label-danger'">
+                                        {{activePolicyGeneral.policyStatus}}
+                                    </span></div>
+                            </div>
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Agent  Code </b></div>
+                                <div class="col-md-9 text-uppercase">{{activePolicyGeneral.agentName}}</div>
+                            </div>
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Total GWP </b></div>
+                                <div class="col-md-9  ">{{activePolicyGeneral.policyGwp | currency:"Rs."}}</div>
+                            </div>
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>Total Premium </b></div>
+                                <div class="col-md-9  ">{{activePolicyGeneral.policyPremium | currency:"Rs."}}</div>
+                            </div>
+
+                              <div class="row" style="margin-top:2%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>NCB </b></div>
+                                <div class="col-md-9  ">{{activePolicyGeneral.ncbPer}}% -  {{activePolicyGeneral.ncbAmt | currency:"Rs."}}</div>
+                            </div>
+
+  <div class="row" style="margin-top:2%" ng-if="activePolicyGeneral.renewalPremium != null || activePolicyGeneral.renewalPremium > 0">
+                                <div class="col-md-3" style="padding-left:0cm"><b>renewalPremium </b></div>
+                                <div class="col-md-9  ">{{activePolicyGeneral.renewalPremium | currency:"Rs."}}</div>
+                            </div>
+
+ <div class="row" style="margin-top:2%" >
+                                <div class="col-md-3" style="padding-left:0cm"><b>VIP </b></div>
+                                <div class="col-md-9  ">{{activePolicyGeneral.vipFlag}}</div>
+                            </div>
+
+
+ <div class="row" style="margin-top:2%" >
+                                <div class="col-md-3" style="padding-left:0cm"><b>Bussiness Party</b></div>
+                                <div class="col-md-9  ">{{activePolicyGeneral.businessParty}}</div>
+                            </div>
+
+
+                        </div>
+                        <div class=" "></div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+
+
+
+                <div class="panel    panel-success" style="font-size:90%" >
+                    <div class="panel-heading">
+                        <h3 class="page-title" style="color:#fff">Vehicle Information </h3>
+                        <hr style="margin-bottom:0cm">
+                    </div>
+
+                    <div class="panel-body">
+
+                        <div class="col-md-12 "  >
+
+                            <div class="row">
+                                <div class="col-md-5" style="padding-left:0cm"><b> Vehicle No. </b></div>
+                                <div class="col-md-7 text-uppercase">{{activePolicyGeneral.vehicleNo}}</div>
+                            </div>
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b>Sum Insured </b></div>
+                                <div class="col-md-7  ">{{activePolicyGeneral.sumInsured | currency:"Rs."}}</div>
+                            </div>
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b>Engine No. </b></div>
+                                <div class="col-md-7  ">{{activePolicyGeneral.engineNo}}</div>
+                            </div>
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b>Chasis No. </b></div>
+                                <div class="col-md-7  ">{{activePolicyGeneral.chassiNo}}</div>
+                            </div>
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b> Vehicle Category
+                                    </b></div>
+                                <div class="col-md-7  ">{{activePolicyGeneral.vehicleCatagory}}</div>
+                            </div>
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b>    Cubic Capacity
+                                    </b></div>
+                                <div class="col-md-7  ">{{activePolicyGeneral.cubicCapacity}}</div>
+                            </div>
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b>     Year of Make
+                                    </b></div>
+                                <div class="col-md-7  ">{{activePolicyGeneral.makeYear}}</div>
+                            </div>
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b>   Lease / Loan
+                                    </b></div>
+                                <div class="col-md-7  ">{{activePolicyGeneral.leaseLoan}}</div>
+                            </div>
+
+
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b>  Institute
+                                    </b></div>
+                                <div class="col-md-7  " style="padding-right:0cm">{{activePolicyGeneral.leaseIntitute}}</div>
+                            </div>
+
+
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b> Make
+                                    </b></div>
+                                <div class="col-md-7  ">{{activePolicyGeneral.vehicleMake}}</div>
+                            </div>
+
+
+
+
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b> Model
+                                    </b></div>
+                                <div class="col-md-7  ">{{activePolicyGeneral.vehicleModel}}</div>
+                            </div>
+                            <div class="row" style="margin-top:2%">
+                                <div class="col-md-5" style="padding-left:0cm"><b>Vehicle Usage
+                                    </b></div>
+                                <div class="col-md-7  ">
+
+                                    {{activePolicyGeneral.vehicleUsage}}</div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        <div class="  ">
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+ 
+
+
+
+        </div>

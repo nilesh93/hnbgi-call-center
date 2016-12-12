@@ -1,0 +1,39 @@
+{
+  "name": "angular-base64-codec",
+  "version": "1.0.0",
+  "homepage": "https://github.com/xelita/angular-base64",
+  "authors": [
+    "xelita <admin@xelita.com>"
+  ],
+  "description": "Base64 encoding and decoding service for AngularJS applications",
+  "main": "dist/angular-base64-codec.min.js",
+  "keywords": [
+    "angular",
+    "base64"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.3",
+    "angular-mocks": "~1.2.3",
+    "jquery": "~2.1.1"
+  },
+  "dependencies": {
+    "angular": "~1.2.3"
+  },
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.0",
+    "commit": "84cd6227bdd64a761670399b98485b54c8e27f38"
+  },
+  "_source": "https://github.com/xelita/angular-base64.git",
+  "_target": "~1.0.0",
+  "_originalSource": "angular-base64-codec"
+}

@@ -1,0 +1,138 @@
+<div class="container-fluid animated zoomInUp">
+    <div class="panel panel-default" style="font-size:80%">
+        <div class="panel-body">
+            <div class=" ">
+                <form class="form-horizontal" role="form" name="jobInfo" novalidate="" angular-validator="" angular-validator-submit="search()">
+
+                    <div class="col-md-4 col-md-offset-1">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Date From</label>
+                            <div class="col-md-8">
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" id="from" role="button" data-toggle="dropdown" data-target="#" href="">
+                                        <input type="text" class="form-control input-sm" ng-model="search.from" readonly>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                                        <datetimepicker data-ng-model="search.from" data-datetimepicker-config="{ dropdownSelector: '#from' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="exampleInputEmail2">Date To</label>
+                            <div class="col-md-8">
+
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" id="to" role="button" data-toggle="dropdown" data-target="#" href="">
+                                        <input type="text" class="form-control input-sm" ng-model="search.to" readonly>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                                        <datetimepicker data-ng-model="search.to" data-datetimepicker-config="{ dropdownSelector: '#to' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-1 ">
+                        <div class="form-group">
+
+                            <div class="col-md-12" style="margin-top:5%">
+                                <button type="submit" class="btn btn-sm   btn-block btn-primary" ng-disabled="searching">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="form-group">
+                            <div class="col-md-12" style="margin-top:5%">
+                                <button type="button" ng-click="today()" class="btn btn-sm   btn-block btn-success" ng-disabled="searching">Today</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+
+                <md-progress-linear ng-show="searching" md-mode="indeterminate" aria-valuemin="0" aria-valuemax="100" role="progressbar"
+                    aria-hidden="true" class="ng-hide">
+                    <div class="md-container md-mode-indeterminate">
+                        <div class="md-dashed"></div>
+                        <div class="md-bar md-bar1"></div>
+                        <div class="md-bar md-bar2"></div>
+                    </div>
+                </md-progress-linear>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="   " style="font-size:90%">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Search Results</h3>
+                <div class="actions pull-right">
+
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="">
+                    <div class=" ">
+                        <table class="table table-hover table-bordered table-condensed">
+
+
+                            <thead style="font-size:90%">
+                                <tr class=" " style="">
+                                    <th>Job Assign </th>
+                                    <th>Job Number</th>
+                                    <th>INS Type</th>
+                                    <th>Location</th>
+                                    <th>Job Start </th>
+                                    <th>Job Closed </th>
+                                    <th>ACR </th>
+
+                                    <th>Assessor Code</th>
+
+                                    <th style="width:80px"></th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody style="font-size:80%">
+
+                                <tr ng-repeat="x in dashInfoList | filter:searchInfo">
+                                    <td>{{x.assignTime}}</td>
+                                    <td>{{x.jobNumber}}</td>
+                                    <td>{{x.inspectionType}}</td>
+                                    <td>{{x.accidentLocation}}</td>
+                                    <td>{{x.startDate}} {{x.startTime}}</td>
+                                    <td>{{x.endDate}} {{x.endTime}}</td>
+                                    <td>{{x.actualCostRepair | currency :"Rs "}}</td>
+
+
+                                    <td>{{x.assessorCode}}</td>
+
+                                    <td> <button type="button" class="btn btn-sm btn-success btn-block" ng-click="loadModal(x.jobNumber,x)">View</button></td>
+                                    <!--<td><button ng-click="viewIntimation(x.jobNumber)" class="btn btn-sm btn-success btn-block">View</button> </td>     
+                            </tr>-->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

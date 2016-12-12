@@ -1,0 +1,37 @@
+
+var app = angular.module('coreApp', [
+    'ui.router',
+    'ui.bootstrap',
+    'ngAnimate',
+    'tc.chartjs',
+    'growlNotifications',
+    'ui.tree',
+    'ui.select',
+    'ngMap',
+    'google.places',
+    'ngGPlaces',
+    'datatables',
+    'duScroll',
+    'textAngular',
+    'ui.switchery',
+    'gridshore.c3js.chart',
+    'uiGmapgoogle-maps',
+    //'angular-rtcomm',
+    'ngDropzone',
+    'ocNgRepeat',
+    'ui.bootstrap.datetimepicker',
+    'base64',
+    'angularValidator',
+    'ngToast',
+    'ngSwipebox',
+    'ngAria',
+    'ngMaterial',
+    'ngMaterialDatePicker',
+    'ngSanitize',
+    'angular-timeline',
+    'chart.js',
+    'anim-in-out'
+
+
+])
+//'tien.clndr',

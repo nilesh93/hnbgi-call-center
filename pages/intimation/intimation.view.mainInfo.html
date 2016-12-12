@@ -1,0 +1,252 @@
+<div ng-show="userPermission.indexOf('COVERNOTE-REMAP') != -1" >
+    <div class="row" ng-show="!coverNoteStatus && remapStatus" >
+        <div class="container-fluid">
+            <div class="col-md-7">
+                <!-- <button class="btn btn-sm  btn-danger" style="margin-top:1%" ng-click="remappolicy()">Re-map Policy</button> -->
+
+
+                <uib-accordion close-others="oneAtATime">
+
+                    <uib-accordion-group is-open="status.open">
+                        <uib-accordion-heading>
+                            Re-Map CoverNote To Policy <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                        </uib-accordion-heading>
+
+                        <form class="form-horizontal" style="font-size:85%">
+
+                            <div class="form-group">
+
+                                <label class="control-label col-md-2">Policy No</label>    
+                                <div class="col-md-6">
+
+                                    <input type="text" class="form-control input-sm" ng-model="covernote.policy">
+                                </div>
+                                <div class="col-md-2" style="padding-left:0cm;padding-top:0.7%">
+                                    <button class="btn btn-sm btn-block btn-info" ng-click="checkPolicy()">Check</button>
+                                </div>
+                                <div class="col-md-2" style="padding-left:0cm;padding-top:0.7%">
+
+                                    <button ng-disabled="policyVerified" class="btn btn-sm btn-block btn-success" ng-click="convert()">Save</button>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </uib-accordion-group>
+                </uib-accordion>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-show="userPermission.indexOf('COVERNOTE-MAP') != -1" > 
+    <div class="row" ng-show="converNoteStatus">
+        <div class="container-fluid">
+            <div class="col-md-7">
+
+                <div class="panel panel-default" style="font-size:85%">
+
+                    <div class="panel-heading">
+
+
+                        <h1 class="panel-title"> Cover Note to Policy  </h1>
+                    </div> 
+
+
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+
+                            <div class="form-group">
+
+                                <label class="control-label col-md-2">Policy No</label>    
+                                <div class="col-md-6">
+
+                                    <input type="text" class="form-control input-sm" ng-model="covernote.policy">
+                                </div>
+                                <div class="col-md-2" style="padding-left:0cm;padding-top:0.7%">
+                                    <button class="btn btn-sm btn-block btn-info" ng-click="checkPolicy()">Check</button>
+                                </div>
+                                <div class="col-md-2" style="padding-left:0cm;padding-top:0.7%">
+
+                                    <button ng-disabled="policyVerified" class="btn btn-sm btn-block btn-success" ng-click="convert()">Save</button>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+<div class="col-md-7"  style="font-size:90%" >
+
+
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Customer Information</h3>
+            <!--    <div class="actions pull-right">
+<div ng-hide="showItem=='CUSTOMER'">
+<i data-fullscreen-widget="" class="fa fa-edit" ng-click="showItem='CUSTOMER'"></i>EDIT
+</div>  
+<div ng-show="showItem=='CUSTOMER'">
+<i data-fullscreen-widget="" class="fa fa-edit" ng-click="showItem='NONE'"></i>CANCEL
+<i data-fullscreen-widget="" class="fa fa-edit" ng-click="iv.updateIntimation()"></i>SAVE
+</div>  
+</div> -->
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+
+                <div class="row" style="padding:0.5%">
+                    <div class="col-md-3"><b>MOI Number </b></div>
+                    <div class="col-md-9 text-uppercase">{{iv.intimationMain.moiNo}}  
+                    </div>
+                </div>
+
+                <div class="row" style="padding:0.5%">
+                    <div class="col-md-3"><b> Call Date </b></div>
+                    <div class="col-md-9 text-uppercase">{{iv.intimationMain.callDate}} {{iv.intimationMain.callTime}}
+                    </div>
+                </div>
+
+
+
+
+                <div class="row" style="padding:0.5%">
+                    <div class="col-md-3"><b> Name of Insured </b></div>
+                    <div class="col-md-9 text-uppercase">{{iv.intimationMain.insuredName}}
+                    </div>
+                </div>
+
+                <div class="row" style="padding:0.5%" ng-hide="showItem=='CUSTOMER'" >
+                    <div class="col-md-3"><b> Insured NIC </b></div>
+                    <div class="col-md-9 text-uppercase">{{iv.intimationMain.insuredNic}}
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="row" style="padding:0.5%" ng-hide="showItem=='CUSTOMER'" >
+                    <div class="col-md-3"><b>Contact No</b></div>
+                    <div class="col-md-9 text-uppercase">{{iv.intimationMain.contactNo}}
+                    </div>
+                </div>
+
+
+                <div class="row" style="padding:0.5%" ng-hide="showItem=='CUSTOMER'" >
+                    <div class="col-md-3"><b>Pol Hold Mobile</b></div>
+                    <div class="col-md-9 text-uppercase">{{iv.intimationMain.mobileNo}}
+                    </div>
+                </div>
+
+                <div class="form-group" ng-show="showItem=='CUSTOMER'">
+                    <label class="col-md-3 control-label "  style="text-align:left;">Insured NIC</label>
+                    <div class="col-md-9">
+
+                        <input class="form-control" ng-model="iv.job.insuredNic">
+                    </div>
+
+                </div>
+
+
+                <div class="form-group" ng-show="showItem=='CUSTOMER'">
+                    <label class="col-md-3 control-label"   style="text-align:left;">Contact No</label>
+                    <div class="col-md-9">
+
+                        <input class="form-control" ng-model="iv.job.contactNo">
+                    </div>
+
+                </div>
+
+
+                <div class="form-group" ng-show="showItem=='CUSTOMER'">
+                    <label class="col-md-3 control-label"   style="text-align:left;">Pol Hold Mobile</label>
+                    <div class="col-md-9">
+
+                        <input class="form-control" ng-model="iv.job.mobileNo">
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>  
+
+
+</div>
+
+
+
+
+<div class="col-md-5"  style="font-size:90%" >
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Policy Information</h3>
+
+
+        </div>
+        <div class="panel-body" >
+
+            <div class="row" style="padding:0.5%">
+                <div class="col-md-5"><b> Policy No. </b></div>
+                <div class="col-md-7 text-uppercase">{{iv.intimationMain.policyNo}}
+                </div>
+            </div>
+
+            <div class="row" style="padding:0.5%">
+                <div class="col-md-5"><b> Date  From</b></div>
+                <div class="col-md-7  "> {{iv.intimationMain.fromDate}} &nbsp;&nbsp; <b>To</b> &nbsp;&nbsp;  {{iv.intimationMain.toDate}}
+                </div>
+            </div>
+
+            <div class="row"  style="padding:0.5%">
+                <div class="col-md-5"  ><b> Vehicle No. </b></div>
+                <div class="col-md-7 text-uppercase">{{iv.intimationMain.vehicleNo}}
+                </div>
+            </div>
+
+            <div class="row"  style="padding:0.5%">
+                <div class="col-md-5"  ><b>Make</b></div>
+                <div class="col-md-7 text-uppercase">{{iv.intimationMain.vehicleMake}}
+                </div>
+            </div>
+
+            <div class="row"  style="padding:0.5%">
+                <div class="col-md-5"  ><b>Model</b></div>
+                <div class="col-md-7 text-uppercase">{{iv.intimationMain.vehicleModel}}
+                </div>
+            </div>
+
+            <div class="row"  style="padding:0.5%">
+                <div class="col-md-5" ><b>Vehicle Cat</b></div>
+                <div class="col-md-7 text-uppercase">{{iv.intimationMain.vehicleCategory}}
+                </div>
+            </div>
+            <div class="row"  style="padding:0.5%">
+                <div class="col-md-5" ><b>Make Year</b></div>
+                <div class="col-md-7 text-uppercase">{{iv.intimationMain.makeYear}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class=" " style="font-size:90%">
+
+    <div ng-include="'pages/intimation/intimation.view.mainInfo.display.html'"></div>
+
+
+</div> 

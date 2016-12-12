@@ -1,0 +1,250 @@
+         <uib-accordion close-others="oneAtATime">
+  
+    <uib-accordion-group is-open="status.open">
+      <uib-accordion-heading>
+        Assessor Details       <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </uib-accordion-heading>
+        
+   
+        <form class="form-horizontal" angular-validator-submit="updateIntimation()" name="myFormAss" class="form-horizontal" novalidate angular-validator> 
+            <div class="row" style="padding:0.5%" ng-hide="showItem=='ASS'" >
+                <div class="col-md-2"><b> Allocated Date</b></div>
+                <div class="col-md-4 text-uppercase">{{iv.intimationMain.allocateDate}}
+                </div>
+                <div class="col-md-2"><b>  Arrenge Type</b></div>
+                <div class="col-md-4 text-uppercase">{{iv.intimationMain.arrangeType}}
+                </div>
+
+            </div>
+
+
+            <div class="form-group" ng-show="showItem=='ASS'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left"> Allocated Date </label>
+                <div class="col-md-4 ">
+
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" id="allocatedDate" role="button" data-toggle="dropdown" data-target="#" href="">
+                            <input type="text" class="form-control input-sm" ng-model="iv.job.allocateDate" readonly>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                            <datetimepicker data-ng-model="iv.job.allocateDate"
+                                            data-datetimepicker-config="{ dropdownSelector: '#allocatedDate' ,minView:'day',modelType:'DD/MM/YY'}"></datetimepicker>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <label class="col-md-2 control-label" style="text-align:left">  Arrenge Type </label>
+                <div class="col-md-4 ">
+                        <select class="form-control input-sm" ng-model = "iv.job.arrangeType" >
+                        <option value="Arranged">ARRENGED</option>
+                        <option value="NotArranged">NOT ARRENGED</option>
+
+                    </select>
+
+                </div>
+            </div>
+
+
+            <div class="row" style="padding:0.5%"  ng-hide="showItem=='ASS'">
+                <div class="col-md-2"><b> Acessor Name</b></div>
+                <div class="col-md-4 text-uppercase">{{iv.intimationMain.assessorName}}
+                </div>
+                
+                     <div class="col-md-2"><b> Acessor Code</b></div>
+                <div class="col-md-4 text-uppercase">{{iv.intimationMain.assessorCode}}
+                </div>
+
+
+            </div>
+
+            <div class="form-group" ng-show="showItem=='ASS'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left" >  Acessor Name </label>
+                <div class="col-md-6 ">
+                    <!--
+                    <select class="form-control input-sm"  ng-model="iv.job.assessorCode"> 
+
+                        <option value="{{a.userCode}}" ng-repeat="a in assessorsList | orderBy:'display':false" > {{a.display}}--{{a.userCode}}</option>    
+                    </select>
+
+-->
+                    
+                    
+                    <ui-select  ng-model="iv.job.assessors" style="width:100%"  limit = "15" >
+
+                        <ui-select-match>
+
+                            <span>{{$select.selected.display}}</span>
+                        </ui-select-match>
+
+                        <ui-select-choices repeat="item in (assessorsList|filter:$select.search | limitTo:$select.limit) track by item.userCode">
+                            <span>{{item.display}}</span>    
+                        </ui-select-choices>
+
+
+                    </ui-select>
+
+                </div>
+                <label class="col-md-2 control-label" style="text-align:left" > {{iv.job.assessors.userCode}} </label>
+                <div class="col-md-2">
+
+                    <button class="btn btn-sm btn-info btn-sm btn-block" ng-click="assesorMap(iv.job,'INT')">Show Map</button>
+
+                </div>
+            </div>
+
+            <div class="row" style="padding:0.5%"  ng-hide="showItem=='ASS'">
+                <div class="col-md-2"><b> Assigned Date</b></div>
+                <div class="col-md-4 text-uppercase">{{iv.intimationMain.assignDate}}
+                </div>
+                <div class="col-md-2"><b> Confirmed Date</b></div>
+                <div class="col-md-4 text-uppercase">{{iv.intimationMain.assessorConfirmDate}}
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group" ng-show="showItem=='ASS'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left"> Assigned Date </label>
+                <div class="col-md-4 ">
+                  
+                         <div class="dropdown">
+                        <a class="dropdown-toggle" id="assignDate" role="button" data-toggle="dropdown" data-target="#" href="">
+                            <input type="text" class="form-control input-sm" ng-model="iv.job.assignDate" readonly>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel4">
+                            <datetimepicker data-ng-model="iv.job.assignDate"
+                                            data-datetimepicker-config="{ dropdownSelector: '#assignDate' ,minView:'day',modelType:'DD/MM/YY'}"></datetimepicker>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <label class="col-md-2 control-label" style="text-align:left">  Confirmed Date </label>
+                <div class="col-md-4 ">
+                   
+                          <div class="dropdown">
+                        <a class="dropdown-toggle" id="confDate" role="button" data-toggle="dropdown" data-target="#" href="">
+                            <input type="text" class="form-control input-sm" ng-model="iv.job.assessorConfirmDate" readonly>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel5">
+                            <datetimepicker data-ng-model="iv.job.assessorConfirmDate"
+                                            data-datetimepicker-config="{ dropdownSelector: '#confDate' ,minView:'minute',modelType:'YYYY-MM-DD HH:mm:ss A'}"></datetimepicker>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="row" style="padding:0.5%"  ng-hide="showItem=='ASS'">
+                <div class="col-md-2"><b> Completed Date</b></div>
+                <div class="col-md-4 text-uppercase">{{iv.intimationMain.completeDate}}
+                </div>
+
+                 <div class="col-md-2"><b> Promise Time  </b></div>
+                <div class="col-md-4 text-uppercase">{{ Math.floor(iv.intimationMain.promiseTime/60)}} Hours and {{ iv.intimationMain.promiseTime%60 }} minutes.
+                </div>
+
+
+            </div>
+
+            <div class="row" style="padding:0.5%"  ng-hide="showItem=='ASS'">
+
+                <div class="col-md-2"><b> Remarks</b></div>
+                <div class="col-md-10 text-uppercase">{{iv.intimationMain.comment}}
+                </div>
+
+            </div>
+
+            <div class="form-group" ng-show="showItem=='ASS'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left">  Completed Date </label>
+                <div class="col-md-4 ">
+                   
+                        <div class="dropdown">
+                        <a class="dropdown-toggle" id="completedDate" role="button" data-toggle="dropdown" data-target="#" href="">
+                            <input type="text" class="form-control input-sm" ng-model="iv.job.completeDate" readonly>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel5">
+                            <datetimepicker data-ng-model="iv.job.completeDate"
+                                            data-datetimepicker-config="{ dropdownSelector: '#completedDate' ,minView:'day',modelType:'DD/MM/YY'}"></datetimepicker>
+                        </ul>
+                    </div>
+                </div>
+
+    
+
+            </div>
+            
+            <div class="form-group " ng-show="showItem=='ASS'"  style="padding:0.5%">
+            
+                         <label class="col-md-2 control-label" style="text-align:left"> Promise Time </label>
+                <div class="col-md-8 ">
+                   
+                              <div class="col-sm-3">
+                    <input  min="0" type="number" Placeholder="Hours"   ng-model="iv.job.hours"  
+
+class="form-control input-sm">
+                    
+                </div>
+            <div class="col-md-2"  style="margin-top:0.8%;padding-left:0cm">
+                    
+                    <i> <b> Hours and   </b></i>
+                    </div>
+                <div class="col-sm-3">
+                    <input min="0" max="59" type="number" Placeholder="Minutes" ng-model="iv.job.promise"  
+
+class="form-control input-sm">
+                    
+                </div>
+                    <div class="col-md-1"  style="margin-top:0.8%;padding-left:0cm">
+                    
+                    <i> <b> Minutes</b></i>
+                    </div>  
+                   
+                   
+                    
+                </div>
+            
+            </div>
+
+            <div class="form-group" ng-show="showItem=='ASS'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left">  Remarks </label>
+                <div class="col-md-10 ">
+                    <textarea class="form-control input-sm" ng-model="iv.job.comment"></textarea>
+
+                </div>
+            </div>
+             <div ng-show="userPermission.indexOf('JOB-UPDATE-MOTOR') != -1" > 
+           
+                 <div class="form-group" ng-hide="converNoteStatus">
+               
+                <div class="col-md-offset-10 col-md-2" ng-hide="showItem=='ASS'">
+                    <button   class="btn btn-block btn-sm btn-info" ng-click="showItem='ASS'">    EDIT </button>
+                </div> 
+                       <div class="col-md-offset-8 col-md-2" ng-show="showItem=='ASS'">
+                           <button   class="btn btn-block btn-sm btn-default" ng-click="showItem='NONE'"> CANCEL </button>
+                             </div>  
+                   <div class=" col-md-2" ng-show="showItem=='ASS'">
+                       <button   class="btn btn-block btn-sm btn-success" ng-click="iv.updateIntimation()"> SAVE </button>
+                   </div>
+                   
+               </div>
+            </div>
+
+        </form>
+        
+        
+        
+             </uib-accordion-group>
+</uib-accordion>
+
+
+
+

@@ -1,0 +1,23 @@
+{
+  "name": "hnbgi-core-app",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Nilesh Jayanandana"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap-lightbox": "^0.12.0",
+    "angular-timeline": "^1.6.2",
+    "angular-chart.js": "^0.10.2",
+    "angular-ui-router-anim-in-out": "^1.0.2"
+  }
+}

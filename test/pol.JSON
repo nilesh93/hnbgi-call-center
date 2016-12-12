@@ -1,0 +1,772 @@
+{
+  "_embedded": {
+    "policies": [
+      {
+        "policyNo": "15TSM5KCA005606",
+        "proposalNo": "5/HN/TSM/MOTOR/6562",
+        "vehicleNo": "UPPG-2390",
+        "policyStatus": "ENDORSEMENT/ALTERATION STARTED",
+        "contactNo": ",,0715723877",
+        "effectiveDate": "2015-05-12",
+        "expiryDate": "2016-05-11",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "F8DN5399734",
+        "chassiNo": "MA3EUA61S00617431",
+        "agentName": "MB754  ~  AGENT  ~  Mr KOLAMBA MUHANDIRAMGE THARAKA JAYASINGHA",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "DFCC VARDHANA BANK PLC",
+        "policyGwp": 24163.75,
+        "sumInsured": 1425000,
+        "insuredName": "Mr. P SAMARARATHNE",
+        "insuredAddress": "NO 3/10 SIYAMBALAPE SOUTH SIYAMBALAPE",
+        "cubicCapacity": "796",
+        "policyPremium": 27985.94,
+        "vehicleMake": "SUZUKI ALTO-LXI",
+        "vehicleModel": "SUZUKI ALTO-LXI",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2012",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/41604464912052015"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/41604464912052015"
+          }
+        }
+      },
+      {
+        "policyNo": "15TSM5KCA005440",
+        "proposalNo": "5/HN/TSM/MOTOR/6380",
+        "vehicleNo": "UR",
+        "policyStatus": "PPW CANC",
+        "contactNo": ",0714869448,0718991795",
+        "effectiveDate": "2015-03-16",
+        "expiryDate": "2016-03-15",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "1NZ-E843902",
+        "chassiNo": "NZT260-3155774",
+        "agentName": "MB456  ~  AGENT  ~  Mr U WIJESEKARA",
+        "leaseLoan": "No",
+        "leaseIntitute": null,
+        "policyGwp": 98306.66,
+        "sumInsured": 6000000,
+        "insuredName": "Ms. P M DEWASINGHE",
+        "insuredAddress": "NO 679/1 ROHANAPURA TISSAMAHARAMA",
+        "cubicCapacity": "1490",
+        "policyPremium": 112291.07,
+        "vehicleMake": "TOYOTA PREMIO",
+        "vehicleModel": "TOYOTA PREMIO",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": null,
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/40473043216032015"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/40473043216032015"
+          }
+        }
+      },
+      {
+        "policyNo": "15TSM5KCA005547",
+        "proposalNo": "5/HN/TSM/MOTOR/6500",
+        "vehicleNo": "SPKE-0696",
+        "policyStatus": "ENDORSEMENT/ALTERATION STARTED",
+        "contactNo": ",,0715351151",
+        "effectiveDate": "2015-04-10",
+        "expiryDate": "2016-04-09",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "F8BIN3711453",
+        "chassiNo": "MA3ECA12S02621133",
+        "agentName": "IC016  ~  DIR_SP  ~  SINGER FINANCE (LANKA) LIMITED",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "SINGER FINANCE LANKA PLC.",
+        "policyGwp": 17286.66,
+        "sumInsured": 950000,
+        "insuredName": "Mr. N ALAHAKOON",
+        "insuredAddress": "NO 173 NEW TOWN WEERAWILA",
+        "cubicCapacity": "796",
+        "policyPremium": 20166.22,
+        "vehicleMake": "MARUTI 800",
+        "vehicleModel": "MARUTI 800",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2006",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/41091246810042015"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/41091246810042015"
+          }
+        }
+      },
+      {
+        "policyNo": "15TSM5KCA005694",
+        "proposalNo": "5/HN/TSM/MOTOR/6671",
+        "vehicleNo": "UR",
+        "policyStatus": "ACTIVE POLICY",
+        "contactNo": ",,0772417252",
+        "effectiveDate": "2015-06-11",
+        "expiryDate": "2016-06-10",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "1NZ-1LM-R251106",
+        "chassiNo": "NKE165-7096854",
+        "agentName": "MB368  ~  AGENT  ~  Mr EDIRIMUNI DEWAGE SAMPATH",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "BANK OF CEYLON - KATARAGAMA",
+        "policyGwp": 78726.66,
+        "sumInsured": 4600000,
+        "insuredName": "Ms. O S MALKANTHI",
+        "insuredAddress": "NO 77/1/C, KOHOMBAGAHAPELESSA KATHARAGAMA ROAD TISSAMAHARAMA",
+        "cubicCapacity": "1490",
+        "policyPremium": 90027.2,
+        "vehicleMake": "TOYOTA DAA-NKE165",
+        "vehicleModel": "TOYOTA DAA-NKE165",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": null,
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/42200105711062015"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/42200105711062015"
+          }
+        }
+      },
+      {
+        "policyNo": "15TSM5KCA005643",
+        "proposalNo": "5/HN/TSM/MOTOR/6601",
+        "vehicleNo": "CPCAF-9486",
+        "policyStatus": "ENDORSEMENT/ALTERATION STARTED",
+        "contactNo": ",,0718570282",
+        "effectiveDate": "2015-05-22",
+        "expiryDate": "2016-05-21",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "K10BN1841512",
+        "chassiNo": "MA3ETDE1S00188862",
+        "agentName": "MB738  ~  AGENT  ~  Mr WENGAPPULLI ARACHCHIGE DILSHAN",
+        "leaseLoan": "No",
+        "leaseIntitute": null,
+        "policyGwp": 40673.91,
+        "sumInsured": 2355000,
+        "insuredName": "Mr. W A I P PIYATISSA",
+        "insuredAddress": "NO 56/1 POLGOLLA WATHTHA POLGOLLA",
+        "cubicCapacity": "996",
+        "policyPremium": 46759.32,
+        "vehicleMake": "SUZUKI CELERIO",
+        "vehicleModel": "SUZUKI CELERIO",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2015",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/41799282222052015"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/41799282222052015"
+          }
+        }
+      },
+      {
+        "policyNo": null,
+        "proposalNo": "5/HN/TSM/MOTOR/6634",
+        "vehicleNo": null,
+        "policyStatus": "DRAFT APPLICATION",
+        "contactNo": ",,0711925754",
+        "effectiveDate": "2015-05-29",
+        "expiryDate": "2016-05-28",
+        "policyType": null,
+        "engineNo": null,
+        "chassiNo": null,
+        "agentName": null,
+        "leaseLoan": null,
+        "leaseIntitute": null,
+        "policyGwp": null,
+        "sumInsured": 0,
+        "insuredName": "Mr. A SAMARAWICKRAMA",
+        "insuredAddress": "NEAR THE 19 TH BRIDGE LUNUGAMWEHERA ",
+        "cubicCapacity": null,
+        "policyPremium": null,
+        "vehicleMake": null,
+        "vehicleModel": null,
+        "productCode": "MOTOR",
+        "vehicleCatagory": null,
+        "makeYear": null,
+        "vehicleUsage": null,
+        "insuredNic": null,
+        "assuranceCode": null,
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/41955696429052015"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/41955696429052015"
+          }
+        }
+      },
+      {
+        "policyNo": "15TSM5KCA005668",
+        "proposalNo": "5/HN/TSM/MOTOR/6636",
+        "vehicleNo": "CPKG-3692",
+        "policyStatus": "ACTIVE POLICY",
+        "contactNo": ",,0770714246",
+        "effectiveDate": "2015-05-29",
+        "expiryDate": "2016-05-28",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "ZY-446647",
+        "chassiNo": "JM6BK10Y280395670",
+        "agentName": "MB577  ~  AGENT  ~  Mr GIDDAWA BALAGOLLE GEDARA RAJAPAKSHA",
+        "leaseLoan": "No",
+        "leaseIntitute": null,
+        "policyGwp": 43131.66,
+        "sumInsured": 2500000,
+        "insuredName": "Mr. N M N G C MUNASINGHE",
+        "insuredAddress": "NO 262/B TEMPLE ROAD NAULA MATALE",
+        "cubicCapacity": "1498",
+        "policyPremium": 49553.45,
+        "vehicleMake": "MAZDA",
+        "vehicleModel": "MAZDA",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2008",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/41959698629052015"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/41959698629052015"
+          }
+        }
+      },
+      {
+        "policyNo": "13TSM5KCA003624",
+        "proposalNo": "5/HN/TSM/MOTOR/4273",
+        "vehicleNo": "WPKI-3002",
+        "policyStatus": "ACTIVE POLICY",
+        "contactNo": ",,0714428373",
+        "effectiveDate": "2015-05-29",
+        "expiryDate": "2016-05-28",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "197133",
+        "chassiNo": "JDAJ210G001058371",
+        "agentName": "MB456  ~  AGENT  ~  Mr U WIJESEKARA",
+        "leaseLoan": "No",
+        "leaseIntitute": null,
+        "policyGwp": 46847,
+        "sumInsured": 3500000,
+        "insuredName": "Mr. A RANAMUKAGE",
+        "insuredAddress": "NO 20/2A PEPILIYANA MAWATHA NUGEGODA",
+        "cubicCapacity": "1495",
+        "policyPremium": 53730.27,
+        "vehicleMake": "DAIHATSU",
+        "vehicleModel": "DAIHATSU",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2007",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/31535996429052013"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/31535996429052013"
+          }
+        }
+      },
+      {
+        "policyNo": "14TSM5KCA004345",
+        "proposalNo": "5/HN/TSM/MOTOR/5111",
+        "vehicleNo": "SPJA-7005",
+        "policyStatus": "ACTIVE POLICY",
+        "contactNo": ",0719064832,0718211150",
+        "effectiveDate": "2015-05-19",
+        "expiryDate": "2016-05-18",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "2NZ-3078333",
+        "chassiNo": "JTDBW21E70-8047067",
+        "agentName": "MB456  ~  AGENT  ~  Mr U WIJESEKARA",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "HOUSING DEVELOPMENT AND FINANCIAL CORPORATION BANK",
+        "policyGwp": 28672.08,
+        "sumInsured": 2200000,
+        "insuredName": "Mr. M A S DESHAPRIYA",
+        "insuredAddress": "ALIMANKADA WELIGATHTHA HAMBANTOTA",
+        "cubicCapacity": "1299",
+        "policyPremium": 33082.64,
+        "vehicleMake": "TOYOTA",
+        "vehicleModel": "TOYOTA",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2004",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/35623538916052014"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/35623538916052014"
+          }
+        }
+      },
+      {
+        "policyNo": "14TSM5KCA004411",
+        "proposalNo": "5/HN/TSM/MOTOR/5180",
+        "vehicleNo": "SPKD-6409",
+        "policyStatus": "CANCELLATION IN PROGRESS",
+        "contactNo": ",,0713551402",
+        "effectiveDate": "2015-05-18",
+        "expiryDate": "2015-05-29",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "F8BIN3688975",
+        "chassiNo": "MA3ECA12S02611147",
+        "agentName": "B011  ~  BROKER  ~  NATIONS INSURANCE BROKERS LIMITED",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "NATIONS TRUST BANK LTD. - HEAD OFFICE",
+        "policyGwp": 17675.83,
+        "sumInsured": 920000,
+        "insuredName": "MS. L M U KRISHANTHI",
+        "insuredAddress": "SAMAGI MAWATHA, YALA JUNCTION KIRINDA TISSAMAHARAMA",
+        "cubicCapacity": "796",
+        "policyPremium": 20794.84,
+        "vehicleMake": "MARUTI 800",
+        "vehicleModel": "MARUTI 800",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2006",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/35855884930052014"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/35855884930052014"
+          }
+        }
+      },
+      {
+        "policyNo": "14TSM5KCA005006",
+        "proposalNo": "5/HN/TSM/MOTOR/5883",
+        "vehicleNo": "UPKC-4189",
+        "policyStatus": "CANCELLATION IN PROGRESS",
+        "contactNo": ",,0729905317",
+        "effectiveDate": "2015-05-19",
+        "expiryDate": "2015-10-27",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "PSBFN3615435",
+        "chassiNo": "MA3ECA12S02577105",
+        "agentName": "MB456  ~  AGENT  ~  Mr U WIJESEKARA",
+        "leaseLoan": "No",
+        "leaseIntitute": null,
+        "policyGwp": 14391.66,
+        "sumInsured": 900000,
+        "insuredName": "Mr. K E SALAMANS",
+        "insuredAddress": "NO19 JANAPADAYA OKKAMPITIYA",
+        "cubicCapacity": "796",
+        "policyPremium": 17026.23,
+        "vehicleMake": "MARUTI 800",
+        "vehicleModel": "MARUTI 800",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2006",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/38156000428102014"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/38156000428102014"
+          }
+        }
+      },
+      {
+        "policyNo": "15TSM5KCA005645",
+        "proposalNo": "5/HN/TSM/MOTOR/6603",
+        "vehicleNo": "WPKU-7513",
+        "policyStatus": "ACTIVE POLICY",
+        "contactNo": ",0777424498,0777424498",
+        "effectiveDate": "2015-05-22",
+        "expiryDate": "2016-05-21",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "R16B11001705",
+        "chassiNo": "JHMFB1630CS201202",
+        "agentName": "H217  ~  HNB_BANK  ~  HNB-WALASMULLA",
+        "leaseLoan": "Loan",
+        "leaseIntitute": "HNB-WALASMULLA",
+        "policyGwp": 41905.83,
+        "sumInsured": 4400000,
+        "insuredName": "Mr M A R D D SIRIWARDHENA",
+        "insuredAddress": "#205  VELIPITIMODARA  GINTHOTA GALLE",
+        "cubicCapacity": "1598",
+        "policyPremium": 48159.86,
+        "vehicleMake": "HONDA CIVIC",
+        "vehicleModel": "HONDA CIVIC",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2012",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/41804788522052015"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/41804788522052015"
+          }
+        }
+      },
+      {
+        "policyNo": "12TSM5KCA002611",
+        "proposalNo": "5/HN/TSM/MOTOR/3022",
+        "vehicleNo": "SPGY-6834",
+        "policyStatus": "ACTIVE POLICY",
+        "contactNo": ",,0711386942",
+        "effectiveDate": "2015-03-13",
+        "expiryDate": "2016-03-12",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "QG13-290929",
+        "chassiNo": "JN1CEAN16Z0-010358",
+        "agentName": "IC263  ~  DIR_SP  ~  UB FINANCE CO. LTD - GALLE",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "U B FINANCE COMPANY LIMITED",
+        "policyGwp": 35513.89,
+        "sumInsured": 2100000,
+        "insuredName": "Mr. K A A MADURANGA",
+        "insuredAddress": "ALUTHGEDARA WAGEGOEA TANGALLE",
+        "cubicCapacity": "1295",
+        "policyPremium": 40855.28,
+        "vehicleMake": "NISSAN SUNNY",
+        "vehicleModel": "NISSAN SUNNY",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2002",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/26652328813032012"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/26652328813032012"
+          }
+        }
+      },
+      {
+        "policyNo": "14TSM5KCA005170",
+        "proposalNo": "5/HN/TSM/MOTOR/6076",
+        "vehicleNo": "WPKS-8707",
+        "policyStatus": "ACTIVE POLICY",
+        "contactNo": ",,0770488204",
+        "effectiveDate": "2014-12-22",
+        "expiryDate": "2015-12-21",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "L29A33V",
+        "chassiNo": "PM2L251S002171994",
+        "agentName": "MB368  ~  AGENT  ~  Mr EDIRIMUNI DEWAGE SAMEERA SAMPATH",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "VALLIBEL FINANCE PLC",
+        "policyGwp": 24600,
+        "sumInsured": 1800000,
+        "insuredName": "Ms. M W HEWAMANNA",
+        "insuredAddress": "NO 1000/2, GONAWATTA ROAD THALANGAMA NORTH MALABE",
+        "cubicCapacity": "1000",
+        "policyPremium": 28738.91,
+        "vehicleMake": "PERODUA VIVA-ELITE",
+        "vehicleModel": "PERODUA VIVA-ELITE",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2012",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/38954051722122014"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/38954051722122014"
+          }
+        }
+      },
+      {
+        "policyNo": "14TSM5KCA004865",
+        "proposalNo": "5/HN/TSM/MOTOR/5716",
+        "vehicleNo": "64-8115",
+        "policyStatus": "ACTIVE POLICY",
+        "contactNo": ",,0779069730",
+        "effectiveDate": "2014-09-23",
+        "expiryDate": "2015-09-22",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "4M40-AQ9186",
+        "chassiNo": "V46-4031493",
+        "agentName": "B028  ~  BROKER  ~  ALFINCO INSURANCE BROKERS (PVT) LTD",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "ARPICO FINANCE CO. PLC",
+        "policyGwp": 38388.66,
+        "sumInsured": 2560000,
+        "insuredName": "Mr. S M DHARMADASA",
+        "insuredAddress": "ELLAGALA JUNCTION PANNEGAMUWA ",
+        "cubicCapacity": "2800",
+        "policyPremium": 44557.67,
+        "vehicleMake": "MITSUBISHI PAJERO",
+        "vehicleModel": "MITSUBISHI PAJERO",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "1994",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/37630349823092014"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/37630349823092014"
+          }
+        }
+      },
+      {
+        "policyNo": "14TSM5KCA004350",
+        "proposalNo": "5/HN/TSM/MOTOR/5116",
+        "vehicleNo": "SPHF-7505",
+        "policyStatus": "EXPIRED/MATURED",
+        "contactNo": ",,0779630022",
+        "effectiveDate": "2014-07-31",
+        "expiryDate": "2015-05-18",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "5L-4674977",
+        "chassiNo": "LH1620002321",
+        "agentName": "MB424  ~  AGENT  ~  Mr KONDARA GAMAGE MAHESH NUWAN KUMARA",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "COMMERCIAL LEASING AND FINANCE PLC",
+        "policyGwp": 7179.42,
+        "sumInsured": 3000000,
+        "insuredName": "Mr W A A I NISHANTHA",
+        "insuredAddress": "SIRIYAGAMA BUNDALA WELIGATHTHA",
+        "cubicCapacity": "2980",
+        "policyPremium": 8244.09,
+        "vehicleMake": "TOYOTA HIACE",
+        "vehicleModel": "TOYOTA HIACE",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "1998",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/35639560719052014"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/35639560719052014"
+          }
+        }
+      },
+      {
+        "policyNo": "14TSM5KCA004207",
+        "proposalNo": "5/HN/TSM/MOTOR/4947",
+        "vehicleNo": "WPKB-2822",
+        "policyStatus": "ACTIVE POLICY",
+        "contactNo": ",,0713529350",
+        "effectiveDate": "2015-03-20",
+        "expiryDate": "2016-03-19",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "G10BBN365923",
+        "chassiNo": "MA3EYD32S00863480",
+        "agentName": "MB456  ~  AGENT  ~  Mr U WIJESEKARA",
+        "leaseLoan": "No",
+        "leaseIntitute": null,
+        "policyGwp": 20330.83,
+        "sumInsured": 1100000,
+        "insuredName": "DR. E T SARATH",
+        "insuredAddress": "NO 80, HAMLET 05 RIGHT BANK LUNUGAMWEHERA",
+        "cubicCapacity": "993",
+        "policyPremium": 23606.55,
+        "vehicleMake": "MARUTI ZEN",
+        "vehicleModel": "MARUTI ZEN",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2006",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/34878874720032014"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/34878874720032014"
+          }
+        }
+      },
+      {
+        "policyNo": "15TSM5KCA005569",
+        "proposalNo": "5/HN/TSM/MOTOR/6522",
+        "vehicleNo": "SPKT-4181",
+        "policyStatus": "ENDORSEMENT/ALTERATION STARTED",
+        "contactNo": ",,0713368433",
+        "effectiveDate": "2015-04-27",
+        "expiryDate": "2016-04-26",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "MR479QBBN586194",
+        "chassiNo": "LB37122S5BH050991",
+        "agentName": "MB695  ~  AGENT  ~  Mr PARANA PALLIYA GURUGE PRIYADHARSHAN",
+        "leaseLoan": "No",
+        "leaseIntitute": null,
+        "policyGwp": 18156.66,
+        "sumInsured": 1000000,
+        "insuredName": "Ms. W A D WICKRAMASINGHE",
+        "insuredAddress": "NO 24, BELGIUM HOUSES SIRIBOPURA HAMBANTOTA",
+        "cubicCapacity": "1342",
+        "policyPremium": 21155.59,
+        "vehicleMake": "MICRO PANDA",
+        "vehicleModel": "MICRO PANDA",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2012",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/41293407527042015"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/41293407527042015"
+          }
+        }
+      },
+      {
+        "policyNo": "15TSM5KCA005458",
+        "proposalNo": "5/HN/TSM/MOTOR/6399",
+        "vehicleNo": "SPKO-7181",
+        "policyStatus": "ACTIVE POLICY",
+        "contactNo": ",,0772045276",
+        "effectiveDate": "2015-03-20",
+        "expiryDate": "2016-03-19",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "1NZ-D063043",
+        "chassiNo": "NZE1416083497",
+        "agentName": "MB368  ~  AGENT  ~  Mr EDIRIMUNI DEWAGE SAMEERA SAMPATH",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "PEOPLES LEASING & FINANCE PLC",
+        "policyGwp": 47296.66,
+        "sumInsured": 2600000,
+        "insuredName": "Mr. W KEERTHIPALA",
+        "insuredAddress": "NO 420/2 RABARWATHTHA TISSAMAHARAMA",
+        "cubicCapacity": "1490",
+        "policyPremium": 54289.12,
+        "vehicleMake": "TOYOTA DBA-NZE141",
+        "vehicleModel": "TOYOTA DBA-NZE141",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "2008",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/40567515820032015"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/40567515820032015"
+          }
+        }
+      },
+      {
+        "policyNo": "14TSM5KCA004374",
+        "proposalNo": "5/HN/TSM/MOTOR/5140",
+        "vehicleNo": "301-0087",
+        "policyStatus": "CANCELLATION IN PROGRESS",
+        "contactNo": ",0712572811,0712572811",
+        "effectiveDate": "2015-06-09",
+        "expiryDate": "2016-05-21",
+        "policyType": "Comprehensive Cover",
+        "engineNo": "GA15-658118D",
+        "chassiNo": "R11-023046",
+        "agentName": "MB456  ~  AGENT  ~  Mr U WIJESEKARA",
+        "leaseLoan": "Hire Purchase",
+        "leaseIntitute": "M/S LANKA ORIX FINANCE PLC",
+        "policyGwp": 21823.33,
+        "sumInsured": 1200000,
+        "insuredName": "Mr. N P G A SAMPATH SRI",
+        "insuredAddress": "WIJESOORIYA ESTATE ANDARAGASYAYA MAGAMA TISSAMAHARAMA",
+        "cubicCapacity": "1490",
+        "policyPremium": 25302.11,
+        "vehicleMake": "NISSAN",
+        "vehicleModel": "NISSAN",
+        "productCode": "MOTOR",
+        "vehicleCatagory": "MOTOR CAR",
+        "makeYear": "1996",
+        "vehicleUsage": "Private",
+        "insuredNic": null,
+        "assuranceCode": "TSM",
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/policies/35698130222052014"
+          },
+          "policy": {
+            "href": "http://localhost:8080/policies/35698130222052014"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "first": {
+      "href": "http://localhost:8080/policies?page=0&size=20"
+    },
+    "self": {
+      "href": "http://localhost:8080/policies"
+    },
+    "next": {
+      "href": "http://localhost:8080/policies?page=1&size=20"
+    },
+    "last": {
+      "href": "http://localhost:8080/policies?page=55&size=20"
+    },
+    "profile": {
+      "href": "http://localhost:8080/profile/policies"
+    },
+    "search": {
+      "href": "http://localhost:8080/policies/search"
+    }
+  },
+  "page": {
+    "size": 20,
+    "totalElements": 1112,
+    "totalPages": 56,
+    "number": 0
+  }
+}

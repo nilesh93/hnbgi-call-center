@@ -1,0 +1,161 @@
+<div class="panel   "   >
+
+
+
+    <aside class="panel-body">
+
+        <uib-tabset>
+            <uib-tab   >
+                <uib-tab-heading>
+                    DEBITS <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.debits" > </i> 
+                </uib-tab-heading>
+                <table    class="table table-hover table-striped table-bordered" style="margin-top:2%" >
+                    <thead>
+                        <tr>
+                            <th ng-class="'col-md-3'" >Debit No.</th>
+                            <th ng-class="'col-md-3'" >Debit Date</th>
+                            <th ng-class="'col-md-2'" >Debit Amount </th>
+                            <th ng-class="'col-md-2'" >Debit Unadjusted</th>
+                            <th ng-class="'col-md-2'" >Debit Match </th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in debitResult">
+                            <td>{{s.debitNumber}}</td>
+                            <td>{{s.debitDate}}</td>
+                            <td>{{s.debitTotal | currency:"Rs."}}</td>
+                            <td>{{s.unadjustedAmount }}</td>
+                            <td>{{s.matchingIndicator }}</td>
+
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </uib-tab>
+            <uib-tab >
+                <uib-tab-heading>
+                    CREDITS <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.credits" > </i> 
+                </uib-tab-heading>
+                <table    class="table table-hover table-striped table-bordered" style="margin-top:2%" >
+                    <thead>
+                        <tr>
+                            <th >Credit No.</th>
+                            <th >Credit Date</th>
+                            <th >Credit Amount </th>
+
+                            <th >Credit Match </th>
+
+                            <th >Physical Refund </th>
+                            <th >Cheque In Fav </th>
+                            <th >Remarks </th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in UWCreditResult">
+
+                            <td>  {{s.creditNumber}} </td>
+                            <td>  {{s.creditDate}} </td>
+                            <td>  {{s.creditAmount | currency:"Rs. "}} </td>
+                            <td>  {{s.creditMatch}} </td>
+
+                            <td>  {{s.physicalRefund}}  </td>
+                            <td>  {{s.chequeFavour}} </td>
+                            <td>  {{s.remarks}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </uib-tab> 
+            <uib-tab >
+                <uib-tab-heading>
+                    RECIEPTS <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.reciepts" > </i> 
+                </uib-tab-heading>
+
+                <table    class="table table-hover table-striped table-bordered" style="margin-top:2%" >
+                    <thead>
+                        <tr>
+                            <th > Policy No.</th>
+                            <th > Voucher No.</th>
+                            <th > Created Date </th>
+
+                            <th >MAT Adjusted Amount </th>
+                            <th >Payment Mode </th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in recieptResult">
+                            <td>  {{s.policyNo}} </td>
+                            <td>  {{s.receiptNo}} </td>
+                            <td>  {{s.receiptDate}} </td>
+                            <td>  {{s.receiptAmount | currency:"Rs."}} </td>
+                            <td>  {{s.paymentMode}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </uib-tab> 
+            <uib-tab  >
+
+                <uib-tab-heading>
+                    CALUSES <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.clauses" > </i> 
+                </uib-tab-heading>
+
+                <table    class="table table-hover table-striped table-bordered" style="margin-top:2%" >
+                    <thead>
+                        <tr>
+                            <th >Clauses</th>
+                            <th >Excess</th>
+                            <th >Limits</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in ClauseResult">
+
+                            <td>{{s.clauses}}</td>
+                            <td>{{s.excess}}</td>
+                            <td>{{s.limits}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </uib-tab>
+            <uib-tab  >
+                <uib-tab-heading>
+                    WARRANTIES <i class="fa fa-refresh fa-spin   fa-fw  " aria-hidden="true" ng-show="loading.warranties" > </i> 
+                </uib-tab-heading>
+                <table    class="table table-hover table-striped table-bordered" style="margin-top:2%" >
+                    <thead>
+                        <tr>
+                            <th >Warranty Details.</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in WarrentyResult">
+                            <td>{{s.warranties}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+            </uib-tab>
+
+        </uib-tabset>
+
+    </aside>
+</div>

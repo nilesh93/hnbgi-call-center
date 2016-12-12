@@ -1,0 +1,503 @@
+ 
+
+<!---->
+<div class="row"  ng-show="converNoteStatus">
+    <div class="">
+        <div class="col-md-7">
+
+            <div class="panel panel-default" style="font-size:85%">
+
+                <div class="panel-heading">
+
+
+                    <h1 class="panel-title"> Cover Note to Policy  </h1>
+                </div> 
+
+
+                <div class="panel-body">
+
+                    <form class="form-horizontal">
+
+                        <div class="form-group">
+
+                            <label class="control-label col-md-2">Policy No</label>    
+                            <div class="col-md-6">
+
+                                <input type="text" class="form-control input-sm" ng-model="covernote.policy">
+                            </div>
+                            <div class="col-md-2" style="padding-left:0cm;padding-top:0.7%">
+                                <button class="btn btn-sm btn-block btn-info" ng-click="checkPolicy()">Check</button>
+                            </div>
+                            <div class="col-md-2" style="padding-left:0cm;padding-top:0.7%">
+
+                                <button ng-disabled="policyVerified" class="btn btn-sm btn-block btn-success" ng-click="convert()">Save</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div> 
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary" style="font-size:85%">
+            <div class="panel-heading">
+                <h3 class="panel-title">Policy Details</h3>
+
+            </div>
+            <div class="panel-body">
+
+                <form class="form-horizontal form-border"  >
+
+
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <div class="row" style="padding-top:1%">
+                                <div class="col-sm-4"> 
+                                    <label class="pull-right  ">Call Date</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <label class="pull-left  ">{{iv.intimationMain.systemDate}}</label>
+                                </div>
+                            </div>  
+
+
+                            <div class="row" style="padding-top:1%" >
+                                <div class="col-sm-4"> 
+                                    <label class="pull-right  ">Insured Tel</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <label class="pull-left  ">{{iv.intimationMain.insuredTelNo}}</label>
+                                </div>
+                            </div>  
+
+                            <div class="row" style="padding-top:1.5%" hidden>
+
+                                <label class="col-sm-4 control-label  ">Insured Tel</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" ng-model="iv.job.insuredTelNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row" style="padding-top:1%">
+                                <div class="col-sm-4"> 
+                                    <label class="pull-right  ">Policy Type</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <label class="pull-left  ">{{iv.intimationMain.policyTypeName}}</label>
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding-top:1%">
+                                <div class="col-sm-4"> 
+                                    <label class="pull-right  ">Policy Number</label>
+                                </div>
+                                <div class="col-sm-8">
+                                    <label class="pull-left  ">{{iv.intimationMain.policyNo}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Branch</label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.branchCode}} </label>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Name of Insured</label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.insuredName}}</label>
+                        </div>
+
+                    </div>
+
+
+
+                </form>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary" style="font-size:85%">
+            <div class="panel-heading">
+                <h3 class="panel-title">Intimation Details</h3>
+             
+            </div>
+            <div class="panel-body">
+
+
+                <form class="form-horizontal">
+
+
+                       <div class="form-group"   >
+
+                     
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">NMI No</label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">   {{iv.intimationMain.docNo}} </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group"   >
+
+                     
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Caller Phone</label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.callerTelNo}} </label>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Caller Name</label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.callerName}}</label>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group"  hidden>
+                        <label class="col-sm-2 control-label">Caller Phone</label>
+
+
+                        <div class="col-sm-4">
+                            <input type="text" name="callerPhone" ng-model="iv.job.callerTelNo" class="form-control"  ng-pattern="'^[0-9]{10}$'"  required-message = "'*Mobile Number Required '"  validate-on="dirty"  invalid-message = "'*10 digits required'" required>
+                        </div>
+
+
+                        <label class="col-sm-2 control-label">Caller Name</label>
+
+
+                        <div class="col-sm-4">
+                            <input type="text"   name="callerName" ng-model="iv.job.callerName" class="form-control" required-message = "'*Caller Name Required '"  required>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Date  of loss</label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.lossDate}} </label>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group"  >
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Type of Loss</label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.lossType}} </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Damages</label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.damage}} </label>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group" hidden>
+
+
+                        <label class="col-sm-2 control-label">Type of Loss</label>
+
+
+                        <div class="col-sm-4">
+                            <input type="text" ng-model="iv.job.lossType" class="form-control">
+                        </div>
+
+
+                        <label class="col-sm-2 control-label">Damages</label>
+
+
+                        <div class="col-sm-4">
+                            <textarea type="text" ng-model="iv.job.damage" name="damages" class="form-control" required-message = "'*Damages Required '" required></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group"  >
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Estimated Loss</label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.estimateLoss | currency:"Rs. "}} </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Place of Loss</label>
+                        </div>
+
+                        <div class="col-sm-4" >
+                            <label class="pull-left  ">{{iv.intimationMain.lossPlace}} </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" hidden="true" >
+                        <label class="col-sm-2 control-label">Estimated Loss</label>
+
+
+                        <div class="col-sm-4">
+                            <input type="text"  name="lossValue" ng-model="iv.job.estimateLoss" class="form-control" ng-pattern="'^\d+(\.\d{1,2})?$'"    validate-on="dirty"  invalid-message = "'*Needs to be a valid amount'"  >
+                        </div>
+
+
+                        <label class="col-sm-2 control-label">Place of Loss</label>
+
+
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control"     ng-model="iv.job.lossPlace"    name="placeOfLoss"  > 
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group"  >
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Assessor Name</label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.assessorName}} </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Assessor Code</label>
+                        </div>
+
+                        <div class="col-sm-4" >
+                            <label class="pull-left  ">{{iv.intimationMain.assessorCode}} </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group"  hidden>
+                        <label class="col-sm-2 control-label">Assessor Name </label>
+                        <div class="col-sm-6"> 
+
+                            <!--ui-select2 -->
+                            <select  ng-model="iv.job.assessorCode" class="form-control" style="width:100%" data-placeholder="Select Assessor">
+                                <option value="{{a.userCode}}" ng-repeat="a in assessorsList | orderBy:'display':false" > {{a.display}}--{{a.userCode}}</option>
+                            </select>
+                        </div>
+
+                        <label class="col-sm-2 control-label">{{iv.job.assessorCode}} </label>
+
+
+                    </div>
+
+                    <div class="form-group" ng-hide="showItem=='INT'">
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Allocated Date </label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.allocateDate}} </label>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Complete Date </label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  "> {{iv.intimationMain.completeDate}} </label>
+                        </div>
+
+                    </div>
+                    <div class="form-group"  ng-show="showItem=='INT'">
+
+
+                        <label class="col-sm-2 control-label">Allocated Date </label>
+
+
+                        <div class="col-sm-4">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" id="allocDate" role="button" data-toggle="dropdown" data-target="#" href="">
+                                    <input type="text" class="form-control input-sm" ng-model="iv.job.allocateDate" readonly>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel5">
+                                    <datetimepicker data-ng-model="iv.job.allocateDate"
+                                                    data-datetimepicker-config="{ dropdownSelector: 'allocDate' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <label class="col-sm-2 control-label">Complete Date </label>
+
+
+                        <div class="col-sm-4">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" id="completeDate" role="button" data-toggle="dropdown" data-target="#" href="">
+                                    <input type="text" class="form-control input-sm" ng-model="iv.job.completeDate" readonly>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel5">
+                                    <datetimepicker data-ng-model="iv.job.completeDate"
+                                                    data-datetimepicker-config="{ dropdownSelector: '#completeDate' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group"   >
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Funerel Expenses </label>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="pull-left  ">{{iv.intimationMain.funeralExpenses | currency:"Rs. "}} </label>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group" hidden>
+
+
+                        <label class="col-sm-2 control-label">Funerel Expenses</label>
+
+
+                        <div class="col-sm-4">
+                            <input type="text" name="funeral" ng-model="iv.job.funeralExpenses" class="form-control" ng-pattern="'^\d+(\.\d{1,2})?$'"    validate-on="dirty"  invalid-message = "'*Needs to be a valid amount'" >
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group"   ng-hide="showItem=='INT'">
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Comment 1 </label>
+                        </div>
+
+                        <div class="col-sm-10">
+                            <label class="pull-left  ">{{iv.intimationMain.commentOne}} </label>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group"  ng-hide="showItem=='INT'" >
+                        <div class="col-sm-2">
+                            <label class="pull-right  ">Comment 2 </label>
+                        </div>
+
+                        <div class="col-sm-10">
+                            <label class="pull-left  ">{{iv.intimationMain.commentTwo}} </label>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group" ng-show="showItem=='INT'" >
+
+
+                        <label class="col-sm-2 control-label">Comment 1</label>
+
+
+                        <div class="col-sm-10">
+                            <textarea type="text" ng-disable="iv.update" ng-model="iv.job.commentOne" class="form-control input-sm"></textarea>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group" ng-show="showItem=='INT'" >
+
+
+                        <label class="col-sm-2 control-label">Comment 2</label>
+
+
+                        <div class="col-sm-10">
+                            <textarea type="text" ng-disable="iv.update" ng-model="iv.job.commentTwo" class="form-control input-sm"></textarea>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group" ng-show="showItem=='INT'">
+
+                        <div class="col-md-offset-8 col-md-2">
+                            <button class="btn btn-sm  btn-default btn-block"  ng-click="changeScope('NONE')" ng-disabled="saving">UNDO</button>
+
+                        </div>
+
+                        <div class=" col-md-2">
+                            <button class="btn btn-sm btn-success btn-block"  ng-disabled="saving"  ng-click="iv.updateIntimation()">UPDATE</button>
+
+                        </div>
+                        
+                        
+                        
+                    </div>  
+                    
+                     <div class="form-group" ng-hide="showItem=='INT'">
+
+                        <div class="col-md-offset-8 col-md-2">
+                               <button ng-click="cancelIntimation()" ng-disabled="saving" class="btn btn-block btn-sm btn-danger" type="button">CANCEL INTIMATION</button>
+
+                        </div>
+
+                        <div class=" col-md-2">
+                            <button class="btn btn-sm btn-success btn-block" ng-disabled="saving"  ng-click="changeScope('INT')">EDIT</button>
+
+                        </div>
+                        
+                        
+                        
+                    </div>  
+                    
+                    
+                      
+
+                  
+                </form>  
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

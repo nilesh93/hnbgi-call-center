@@ -1,0 +1,101 @@
+
+<div class="modal-header">
+    <h3 class="modal-title">Police Stations {{ positionsCenter}}</h3>
+</div>
+<div class="modal-body">
+
+    <div  ng-if="mapLoad == 'POLICE'">
+
+        <div class="row">
+            <div class="col-md-9">
+                <ui-gmap-google-map center="positionsCenter" zoom="10"  pan="true" draggable="true" bounds="bounds"  style="height:300px">
+
+
+
+
+                    <ui-gmap-markers models="markers" coords="'self'" fit="true" icon="'icon'" click="policeSelect"> 
+                    </ui-gmap-markers> 
+
+                </ui-gmap-google-map>
+            </div>
+            <div class="col-md-3"> 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div  ng-if="!policeDefined">
+
+                            <div class="alert alert-danger fade in">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4>Police Station Not Selected</h4>
+                                <p>Please Select an appropriate police station from the map.</p>
+                                <p>
+                                    <button type="button" class="btn btn-danger ">Refresh Map</button>
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div ng-if="policeDefined">                 <legend>{{policeInfo.title}}</legend>
+                            <h5>{{policeInfo.vicinity}}</h5> 
+                            <br>
+                            <div ng-if="policeInfo.id == '0'">
+                                <img class="img-responsive" ng-src="img/map/crash-icon.png">
+
+
+
+                            </div>
+
+                            <div ng-if="policeInfo.id != '0'">
+                                <img class="img-responsive" ng-src="img/map/police-icon.png">
+
+
+                                <br>
+
+                                <center>
+                                    <button class="btn  btn-block" ng-class="policeInfo.selected?'btn-success':'btn-primary'" ng-click="selectPolice(policeInfo.id)" > 
+
+                                        <div ng-if="policeInfo.selected">
+                                            Selected
+                                        </div>
+
+                                        <div ng-if="!policeInfo.selected">
+                                            Select
+                                        </div>
+
+                                    </button> 
+                                </center>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+               <div class="row">
+                    <br>
+                    <br><div class="col-md-12"> 
+                    <form class="form-horizontal" style="  bottom: 0; ">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Radius</label>  
+                            <div class="col-md-8">
+                                <input  type="range" min="3000" max="30000" class="form-control" ng-model="job.radius">
+                                {{job.radius}}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-4 col-md-8">
+                                <button ng-click="loadPoliceMarkers()" type="button" class="btn btn-info btn-sm btn-block">Reload Stations</button></div>
+                        </div>
+                    </form>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    
+      <md-button md-no-ink  ng-click="cancel()">Close</md-button>
+
+<!-- <button class="btn btn-default" type="button" ng-click="cancel()">Close</button> -->
+</div>

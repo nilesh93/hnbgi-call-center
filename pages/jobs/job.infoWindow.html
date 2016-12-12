@@ -1,0 +1,13 @@
+<div  ng-controller="InfoWindowController">
+    <div class="mapinfowindow" >
+
+        <legend style="font-size:98%">  {{:: parameter.title }}</legend>
+
+        <button ng-if="parameter.id != '0'" type="button" class="btn " ng-class="(parameter.selected)?'btn-success':'btn-primary'" ng-click="policeSelect(parameter.id)"> 
+           
+            <div ng-if="parameter.selected">Selected</div> 
+            <div ng-if="!parameter.selected">Select</div> 
+            
+        </button>
+    </div>          
+</div>

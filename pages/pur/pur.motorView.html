@@ -1,0 +1,341 @@
+
+
+<div class="row">
+
+    <div class="col-md-12">
+
+
+
+        <div class="panel panel-info">
+
+            <div class="panel-heading">
+
+
+                <h3 class="panel-title">  MOTOR PUR No -  {{purInfo.purNo}}</h3>
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default" style="font-size:90%" >
+
+                    <div class="panel-heading">
+
+
+                        <h3 class="panel-title">General Information</h3>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12 "  >
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> PUR No. </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.purNo}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Document Type </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.documents}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%" hidden="true">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Document Description </b></div>
+                                <div class="col-md-9 text-uppercase"  ng-hide="branchPUR">
+                                    <temp ng-hide="branchPUR"> {{purInfo.documentDescription}} </temp>
+                                    <input ng-if="branchPUR" type="text" ng-model="purInfo.documentDescription" class="form-control input-sm">
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Branch </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.branchName}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Informer </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.informer}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>   Informer Contact </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.informerContact}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Inform Date </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.systemDate}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Document Date </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.documentDate}} </div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>Vehicle Number </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.vehicleNo}} </div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>Make & Model </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.makeModel}} </div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>Customer Name </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.customerName}} </div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>Customer Contact </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.customerContact}} </div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%" >
+                                <div class="col-md-3" style="padding-left:0cm"><b>Location </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.locationName}} </div>
+                            </div>
+
+                            <div ng-show="userPermission.indexOf('PUR-LOCATION') != -1" >
+                                <div class="row" style="padding-top:1.5%" ng-show="branchPUR">
+                                    <div class="col-md-3" style="padding-left:0cm"><b>Edit Location </b></div>
+                                    <div class="col-md-9 text-uppercase">  
+                                        <input type="text" class="form-control input-sm" g-places-autocomplete options="autocompleteOptions" ng-model="job.locationName"  placeholder="Google Autocomplete is here"   >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>CRC Officer </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.crcOfficer}} </div>
+                            </div>
+
+                            <div ng-show="userPermission.indexOf('PUR-LOCATION') != -1" >
+                                <div class="form-group" ng-show="branchPUR">
+
+                                    <div class=" col-md-offset-6 col-md-3">
+
+                                    </div>
+                                    <div class="col-md-3">
+
+                                        <button class="btn btn-sm  btn-block btn-success" ng-click="purbupdate()">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="panel panel-default" style="font-size:90%" >
+
+                    <div class="panel-heading">
+
+
+                        <h3 class="panel-title">Other Information</h3>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12 "  >
+                            <form class="form-horizontal">
+                                <fieldset  ng-disabled="purInfo.jobCompleteDate != ''">
+
+                                    <div class="form-group"  >
+
+                                        <label class="col-md-3">Branch PUR No.</label>
+                                        <div class="col-md-9 text-uppercase">{{purInfo.branchPurNo}}</div>
+                                    </div>
+
+
+
+
+
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-3">Allocated Date</label>
+
+                                        <div class="col-md-6 text-uppercase">
+
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle" id="allocated" role="button" data-toggle="dropdown" data-target="#" href="">
+                                                    <input type="text" class="form-control input-sm" ng-model="purInfo.jobAllocationDate" readonly>
+                                                </a>
+                                                <ul class="dropdown-menu"  ng-show="purInfo.jobCompleteDate == ''" role="menu" aria-labelledby="dLabel3">
+                                                    <datetimepicker data-ng-model="purInfo.jobAllocationDate" data-before-render="beforeRender($view, $dates, $leftDate, $upDate, $rightDate)"
+                                                                    data-datetimepicker-config="{ dropdownSelector: '#allocated' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-3">Completed Date</label>
+
+                                        <div class="col-md-6 text-uppercase">
+
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle" id="completed" role="button" data-toggle="dropdown" data-target="#" href="">
+
+                                                    <input type="text" class="form-control input-sm" ng-model="job.jobCompleteDate" readonly> 
+                                                </a>
+                                                <ul class="dropdown-menu"  ng-show="purInfo.jobCompleteDate == ''" role="menu" aria-labelledby="dLabel3">
+                                                    <datetimepicker data-ng-model="job.jobCompleteDate"
+                                                                    data-datetimepicker-config="{ dropdownSelector: '#completed' ,minView:'day',modelType:'YYYY-MM-DD'}" data-before-render="beforeRender($view, $dates, $leftDate, $upDate, $rightDate)"></datetimepicker>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-3">Assessor</label>
+
+                                        <div class="col-md-9 text-uppercase">
+
+
+                                            <div class="col-md-9 text-uppercase">{{purInfo.assessorCode}}</div>
+
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-group"  ng-show="purInfo.jobCompleteDate == ''">
+
+                                        <label class="col-md-3">Change Assessor</label>
+
+                                        <div class="col-md-9 text-uppercase">
+
+
+                                            <ui-select  ng-model="job.assessors " style="width:100%"  limit = "15" >
+
+                                                <ui-select-match>
+
+                                                    <span>{{$select.selected.display}}</span>
+                                                </ui-select-match>
+
+                                                <ui-select-choices repeat="item in (assessorsList|filter:$select.search | limitTo:$select.limit) track by item.userCode">
+                                                    <span>{{item.display}}</span>    
+                                                </ui-select-choices>
+
+
+                                            </ui-select>
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group"  ng-show="purInfo.jobCompleteDate == ''">
+
+
+
+                                        <div class="col-md-3 col-md-offset-9 text-uppercase">
+
+
+
+                                            <button type="button" class="btn btn-sm btn-info btn-block" ng-click="assesorMap(job)">Show Map</button>
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group" hidden="true">
+
+                                        <label class="col-md-3">Assessor Contact</label>
+
+                                        <div class="col-md-9 text-uppercase">
+
+                                            <input class="form-control input-sm">
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-3">Comments</label>
+
+                                        <div class="col-md-9 text-uppercase">
+
+                                            <textarea  rows="4" class="form-control input-sm" ng-model="purInfo.comment"></textarea>
+
+                                        </div>
+
+                                    </div>
+
+                                      <div ng-show="userPermission.indexOf('PUR-MOTOR-UPDATE') != -1" >
+                                    <div class="form-group" ng-show="purInfo.jobCompleteDate == ''">
+
+                                        <div class=" col-md-offset-6 col-md-3">
+                                            <button class="btn  btn-sm btn-block btn-default" ng-click="reset()">Reset</button>
+                                        </div>
+                                        <div class="col-md-3">
+
+                                            <button class="btn btn-sm  btn-block btn-success" ng-click="motorSave()">Save</button>
+                                        </div>
+                                    </div>
+
+                                    </div>
+                                </fieldset>
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default" >
+                    <div class="panel-heading">
+
+                        <h5 class="title">Location Map</h5>
+                    </div>
+                    <div class="panel-body"  >
+
+                        <ui-gmap-google-map center="positionsCenter" zoom="positionsCenter.zoom"  pan="true" draggable="false"   refresh ="true" >
+
+
+                            <ui-gmap-markers models="markers" coords="'self'" fit="true"  icon="'icon'" > 
+                            </ui-gmap-markers> 
+
+                        </ui-gmap-google-map>
+                    </div>
+                </div>    
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+</div>

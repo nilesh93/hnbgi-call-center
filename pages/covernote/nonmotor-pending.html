@@ -1,0 +1,63 @@
+<div class="    "  >
+
+<div class="panel panel-default">
+    
+    <div class="panel-heading">
+    
+    <h4 class="panel-title">Pending Covernotes &nbsp; <span style="font-size:100%" class="label label-default label-round">{{searchResult.length}}</span>
+                                                        </h4>
+    </div>
+    <div class="panel-body">
+    
+              <form class="form-horizontal">
+            
+            <div class="form-group">
+            <label class="col-md-offset-8 col-md-1 control-label">Search</label>
+                <div class="col-md-3">
+                
+                <input class="form-control input-sm" ng-model="intiSearch">
+                </div>
+                
+            </div>
+        
+             </form>
+           <table  class="table table-condensed table-striped table-hover table-bordered"   cellspacing="0" width="100%"  style="font-size:80%" >
+                        <thead>
+                            <tr>
+                                <th ng-class="''" >Doc No.</th>
+                                <th ng-class="''" >Policy  No.</th>
+                            
+                                <th ng-class="''" >Accident Date</th>
+                                <th ng-class="''" >Contact</th>
+                                <th ng-class="''" >Assessor </th>
+
+
+
+
+                                <th ng-class="''"    ></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="s in searchResult | filter:intiSearch"  >
+                                <td>{{s.docNo}}</td>
+                                <td>{{s.policyNo}}</td>
+                              
+                                <td>{{s.lossDate}}</td>
+                                <td>{{s.callerTelNo}}</td>
+                                <td>{{s.assessorName}}</td>
+
+                                <td>
+                                    <!-- ng-click="intimationEdit(s.moiNo,s.vehicleNo)" -->
+                                    <button class="btn btn-block   btn-sm btn-success" ui-sref="intimation.nonMotorView({intimationID: s.docNo})"  >View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+        
+    
+    </div>
+    
+    </div>
+
+
+</div>

@@ -1,0 +1,114 @@
+
+<div class="modal-header">
+    <h3 class="modal-title">Online Acessors {{positionsCenter}}</h3>
+</div>
+<div class="modal-body">
+
+    <div  ng-if="mapLoad == 'ASS'">
+
+        <div class="row">
+            <div class="col-md-9">
+                <ui-gmap-google-map center="positionsCenter" zoom="12"  pan="true" draggable="true"   style="height:300px">
+
+
+
+
+                    <ui-gmap-markers models="markersAsc" coords="'self'"   icon="'icon'" click="assSelect"> 
+                    </ui-gmap-markers> 
+
+                </ui-gmap-google-map>
+            </div>
+            <div class="col-md-3"> 
+                <div  ng-if="!assDefined">
+
+                    <div class="alert alert-danger fade in">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4>Acessor Not Selected</h4>
+                        <p>Please Select an appropriate Acessor from the map.</p>
+                        <p>
+                            <button type="button" class="btn btn-danger " ng-click="loadAcessors()">Refresh Map</button>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div ng-if="assDefined">      
+
+
+
+
+
+                    <div ng-if="assInfo.id == '0'">
+                        <legend >{{assInfo.title}}</legend>
+                        <h5>{{assInfo.vicinity}}</h5> 
+                        <br>
+                        <img class="img-responsive" ng-src="img/map/crash-icon.png">
+
+
+
+                    </div>
+
+                    <div ng-if="assInfo.id != '0'">
+                        <!-- <img class="img-responsive" ng-src="img/map/ass.png"> -->
+
+                        <div class="row">
+                            <div class="col-md-3" style="padding-right:0cm"> 
+                                <div class="avatar">
+                                    <img class="img-circle profile-image" src="img/avatar/avatar.jpeg">
+                                </div>
+                            </div>
+                            <div class="col-md-9" style="padding-right:0cm">
+                                <h4>{{assInfo.title}}</h4>
+
+                                <h5> {{assInfo.contact}} </h5>
+                            </div>
+                        </div>
+
+                        <center style="margin-top:10%">
+                            <button class="btn  btn-block" ng-class="assInfo.selected?'btn-success':'btn-info'" ng-click="selectAss(assInfo.id)"  > 
+
+                                <div ng-if="assInfo.selected">
+                                    Selected
+                                </div>
+
+                                <div ng-if="!assInfo.selected">
+                                    Select
+                                </div>
+
+                            </button> 
+                        </center>
+
+
+
+                        <div class="panel  widget-mini"  ng-class="assessorJobList.length > 2 ? 'panel-solid-danger': 'panel-solid-success' " ng-if="!assessorJobListLoad">
+                            <div class="panel-body">
+
+                                <div class="col-md-12">
+                                    <span class="total text-center" style="font-size:90%">{{assessorJobList.length}} Job<temp ng-if="assessorJobList.length != 1">s</temp> Allocated</span>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            
+                           <center>  <md-progress-circular md-mode="indeterminate" ng-if="assessorJobListLoad"></md-progress-circular> </center>
+                            
+                            <div ng-repeat="b in assessorJobList" style="font-size:85%"> 
+
+                                <assessor-details ass="b"></assessor-details>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+          <md-button md-no-ink  ng-click="cancel()">Close</md-button>
+
+    <!-- <button class="btn btn-default" type="button"></button> -->
+</div>

@@ -1,0 +1,153 @@
+<div class="panel panel-success" style="font-size:90%" >
+    <div class="panel-heading">
+        <h3 class="panel-title">Engineering Details</h3>
+
+    </div>
+    <div class="panel-body" >
+
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" style="padding-top:0.4%">Inspections</label>
+                <div class="col-sm-5">
+
+                    <select class="form-control input-sm" ng-model="iv.eng.inspectionCode" ng-init="iv.eng.inspectionCode = '-'">
+                        <option value="{{x.inspectionCode}}" ng-repeat="x in inspectionTypeList">{{x.inspectionDescription}}</option>
+
+                    </select>
+
+                </div>
+
+                <label class="col-sm-1 control-label" style="padding-top:0.4%"> Actions   </label>
+                <div class="col-sm-4">
+                    <select class="form-control input-sm" ng-model ="iv.eng.action" ng-init="iv.eng.action='-'">
+                        <option ng-repeat=" c in engActionTypeList | filter:{inspectionCode:iv.eng.inspectionCode}" value="{{c.actionCode}}">
+                            {{c.actionDescription}}
+                        </option>
+
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" style="padding-top:0.4%">Comments</label>
+                <div class="col-sm-10">
+                    <textarea  class="form-control input-sm" ng-model="iv.eng.comments" ></textarea>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label class="col-sm-2 control-label">Location</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-model="iv.eng.location" class="form-control input-sm"   > 
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <label class="col-sm-2 control-label">Nearest Town</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control input-sm" g-places-autocomplete options="autocompleteOptions" ng-model="iv.eng.nearestTown" ng-init="iv.eng.nearestTown = ''"  name="nearestTown"   placeholder="Google Autocomplete is here"    > 
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" style="padding-top:0.4%">Acessor Or Officer</label>
+                <div class="col-sm-6">
+
+
+                    <ui-select  ng-model="iv.eng.assessorCode" style="width:100%"  limit = "15" >
+                        <ui-select-match>
+                            <span>{{$select.selected.display}}</span>
+                        </ui-select-match>
+
+                        <ui-select-choices repeat="item in (assessorsList|filter:$select.search | limitTo:$select.limit) track by item.userCode">
+                            <span>{{item.display}} - {{item.userCode}}</span>    
+                        </ui-select-choices>
+                    </ui-select>
+
+                    <!-- <select class="form-control input-sm"  ng-model="iv.eng.assessorCode" ng-init="iv.eng.assessorCode = '-'"> 
+
+<option value="{{a.userCode}}" ng-repeat="a in assessorsList | orderBy:'display':false" > {{a.display}}--{{a.userCode}}</option>    
+</select> -->
+
+                </div>
+
+
+                <label class="col-sm-2 control-label">{{iv.eng.assessorCode.userCode}} </label>
+
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-sm btn-info btn-block" ng-click="assesorMap(iv.eng,'ENG')">Show Map</button>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="form-group" hidden>
+                <label class="col-sm-2 control-label" style="padding-top:0.4%">Email 1</label>
+                <div class="col-sm-10">
+                    <input type="email" ng-model="iv.eng.email1" class="form-control input-sm">
+
+                </div>
+
+            </div>
+            <div class="form-group" hidden>
+                <label class="col-sm-2 control-label" style="padding-top:0.4%">Email 2</label>
+                <div class="col-sm-10">
+                    <input type="email" ng-model="iv.eng.email2" class="form-control input-sm">
+
+                </div>
+
+            </div>
+
+            <div class="form-group" hidden>
+                <label class="col-sm-2 control-label" ng-model="iv.eng.email3" style="padding-top:0.4%">Email 3</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control input-sm">
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" style="padding-top:0.4%">Informed To</label>
+                <div class="col-sm-4">
+                    <select class="form-control input-sm" ng-model="iv.eng.InformTo" ng-init="iv.eng.InformTo = '-'">
+                        <option value="{{x.informCode}}" ng-repeat="x in motorEngInformTo">{{x.informDescription}}</option>
+                    </select>
+                </div>
+
+                <label class="col-sm-2 control-label" style="padding-top:0.4%">Informed Way</label>
+                <div class="col-sm-4">
+                    <select class="form-control input-sm" ng-model="iv.eng.InformWay" ng-init="iv.eng.InformWay = '-'">
+
+                        <option value="{{x.informCode}}" ng-repeat="x in motorEngInformWay">{{x.informDescription}}</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-10 col-md-2">
+                    <button type="button" ng-click="iv.engSave()" class="btn btn-sm btn-success btn-block">Save</button>
+
+                </div>
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>

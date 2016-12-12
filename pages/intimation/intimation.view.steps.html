@@ -1,0 +1,57 @@
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title">Steps Taken By CRC Motor Claims and Engineering</h3>
+
+    </div>
+    <div class="panel-body" >
+        <table class="table table-condensed table-hover table-bordered" style="font-size:85%">
+
+            <thead>
+                <td><b>Inspections</b></td>
+                <td><b>Actions</b></td>
+                <td><b>Person</b></td>
+
+                <td><b>Comments</b></td>
+                <td><b>Action Date</b></td>
+                <td><b>Location</b></td>
+                <td><b>Inform to</b></td>
+                <td><b>Inform Way</b></td>
+                <td><b>Username</b></td>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="x in iv.motorStepsList">
+                    <td>
+                     <temp ng-repeat = "f in inspectionTypeList | filter: {inspectionCode : x.inspectionCode}">{{f.inspectionDescription}}</temp>
+                    </td>
+
+                    <td>
+                        <temp ng-repeat = "f in  engActionTypeList | filter: {actionCode: x.actionCode} ">{{f.actionDescription}}</temp>   
+                    </td>
+
+                    <td>
+                       <temp ng-repeat = "f in  assessorsList | filter: {userCode: x.personCode} " ng-if="x.personCode != '-'">{{f.display}}</temp> 
+                    </td> 
+
+                    <td>{{x.comment}}</td>
+                    <td>{{x.systemTime}}</td>
+                    <td>{{x.textOne}}</td>
+                    <td> 
+                    
+                       <temp ng-repeat = "f in  motorEngInformTo | filter: {informCode: x.textTwo} ">{{f.informDescription}}</temp> 
+                    </td>
+                    <td>
+                    
+                     <temp ng-repeat = "f in  motorEngInformWay | filter: {informCode: x.textThree} ">{{f.informDescription}}</temp>
+                    </td>
+                    <td>{{x.sysUser}}</td>
+
+                </tr>
+
+
+            </tbody>
+        </table>
+
+        {{iv.motorStepList}}
+    </div>
+</div>

@@ -1,0 +1,24 @@
+
+
+<div class="row animated bounceInUp" style="margin-top:1%" >
+    <div class="col-md-offset-4 col-md-4">
+        <center> <div class="btn-group col-md-12 " ng-init="searchType = 'INSERT'">
+            <button class="btn  btn-sm col-md-6 " ng-class="searchType == 'INSERT'?'btn-info':'btn-white'"  ng-click="searchType = 'INSERT'"  ui-sref="covernote.motor">MOTOR</button>
+            <button class="btn btn-sm  col-md-6 btn-white" ng-class="searchType == 'PENDING'?'btn-info':'btn-white'"  ng-click="searchType = 'PENDING'"  ui-sref="covernote.nonmotor" > NONMOTOR</button>
+
+            </div> </center>
+    </div> 
+
+</div>
+
+<div ui-view="result"></div>
+
+<!--
+<div ng-show="searchType == 'INSERT'" class="" >
+    <div class="container animated zoomInUp" ng-include="''"></div>
+</div>
+
+<div ng-show="searchType == 'PENDING'" class="" >
+    <div class="  animated zoomInUp" ng-include="''"></div>
+</div>
+-->

@@ -1,0 +1,143 @@
+ 
+
+
+
+
+<div class="container-fluid animated zoomInUp">
+    <div class="col-md-12" style="font-size:80%">
+        <div >
+            <div class=" ">
+                <form class="form-horizontal" role="form" name="jobInfo" novalidate="" angular-validator="" angular-validator-submit="search()">
+
+                    <div class="col-md-5 ">
+                 
+                    </div>
+                   
+                    <div class="col-md-3  ">
+                        <div class="form-group">
+                            <label class="control-label col-md-4"  >Date From</label>
+                            <div class="col-md-8">
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" id="from" role="button" data-toggle="dropdown" data-target="#" href="">
+                                        <input type="text" class="form-control input-sm" ng-model="report.from" readonly>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                                        <datetimepicker data-ng-model="report.from"
+                                                        data-datetimepicker-config="{ dropdownSelector: '#from' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="exampleInputEmail2">Date To</label>
+                            <div class="col-md-8">
+
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" id="to" role="button" data-toggle="dropdown" data-target="#" href="">
+                                        <input type="text" class="form-control input-sm" ng-model="report.to" readonly>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                                        <datetimepicker data-ng-model="report.to"
+                                                        data-datetimepicker-config="{ dropdownSelector: '#to' ,minView:'day',modelType:'YYYY-MM-DD'}"></datetimepicker>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> 
+
+
+
+                    <div class="col-md-1 "  >
+                        <div class="form-group">
+
+                            <div class="col-md-12" style="margin-top:5%">
+                                <button type="submit" class="btn btn-sm   btn-block btn-primary" ng-disabled="searching">Search</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                <md-progress-linear ng-show="searching" md-mode="indeterminate" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-hidden="true" class="ng-hide"><div class="md-container md-mode-indeterminate"><div class="md-dashed"></div><div class="md-bar md-bar1"></div><div class="md-bar md-bar2"></div></div></md-progress-linear>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class=" col-md-12  "   style="font-size:90%">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Search Results</h3>
+                <div class="actions pull-right">
+
+                </div>
+            </div>
+            <div class="panel-body">
+
+                
+                 <form  class="form-horizontal"   >
+                <div class="form-group">
+                    <label class="col-md-offset-7 col-md-2 control-label">Search</label>
+                    <div class="col-md-3">
+                    <input class="form-control input-sm" ng-model="searchInfo">
+                    </div>
+                    </div>
+                </form>
+                <div class=""   >
+                    <div class=" "> 
+                      <table class="table table-hover table-bordered table-condensed"  >
+
+
+                            <thead style="font-size:90%">
+                                <tr class=" " style=""> 
+                                    <th>Job Assign Date & Time </th>
+                                    <th>Job Number</th>
+                                    <th>INS Type</th>
+                                    <th>Location</th>
+                                    
+                                    <th>Job Closed  </th>
+                                 
+
+                                    <th>Assessor Code</th>
+
+                                    <th style="width:80px"></th>  
+                                </tr>
+
+                            </thead>
+
+                            <tbody style="font-size:80%">
+
+                                <tr ng-repeat="x in intimations | filter:searchInfo">
+                                    <td>{{x.assignTime}}</td>    
+                                    <td>{{x.jobNumber}}</td>     
+                                    <td>{{x.inspectionType}}</td>  
+                                    <td>{{x.accidentLocation}}</td> 
+                                    
+                                    <td>{{x.crcAgent}}</td> 
+                                   
+
+
+                                    <td>{{x.assessorCode}}</td>     
+
+                                    <td><button ng-click="rejectIntimation(x.jobNumber,x.id)" class="btn btn-sm btn-danger btn-block">Reject</button> </td>     
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                   
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div></div>

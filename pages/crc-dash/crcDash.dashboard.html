@@ -1,0 +1,79 @@
+<div class="container ">
+
+
+<br>
+    <div class="row animated fadeInRight">
+        
+    
+           
+            <div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-body" align="center" style="padding-bottom : 1px;">
+
+					<p class="lead"><b class="ng-binding">{{motorIntimations}}</b><br>Motor Intimations</p>
+                 
+				</div>
+                 <button class="btn btn-success   btn-block">View </button>
+			</div>
+		</div>
+    
+            <div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-body" align="center" style="padding-bottom : 1px;">
+
+					<p class="lead"><b class="ng-binding">{{nonmotorIntimations}}</b>
+                        <br>Non-Motor Intimations</p>
+				</div>
+                 <button class="btn btn-success   btn-block">View</button>
+			</div>
+ 
+    
+        </div>   
+           
+    
+        
+            <div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-body" align="center" style="padding-bottom : 1px;">
+
+					<p class="lead"><b class="ng-binding">{{callEST}}</b><br>Call EST</p>
+				</div>
+                 <button class="btn btn-success  btn-block">View</button>
+			</div>
+		</div>
+             
+   
+     </div>
+        <div class="row animated fadeInRight">
+    <div class="col-md-12">
+    
+   <div class="panel panel-default">
+				<div class="panel-body" align="center" style="padding-bottom : 1px;">
+					<p class="lead"><b class="ng-binding">{{summaryTotal}}</b><br>Total Inspections Assigned</p><hr>
+					<table class="table table-striped table-hover " style="font-size:85%">
+						<thead>
+							<tr class="info">
+								<th ng-repeat = "x in summary">{{x.insType}}</th>
+								 
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="">
+								 <td ng-repeat="x in summary">{{x.nop}}</td>
+
+							</tr>
+
+
+						</tbody>
+					</table>
+				</div>
+				<hr>
+			</div>
+    
+    
+    </div>
+    </div>
+
+   
+
+</div>

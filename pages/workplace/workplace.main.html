@@ -1,0 +1,134 @@
+<div class="pageheader  "  >
+    <h1>HNBGI WORKSPACE</h1>
+
+    <div class="breadcrumb-wrapper hidden-xs">
+
+
+
+        <div class="btn-group  ">
+            <button class="btn btn-sm"   ng-class="activeZone=='OVERALL'?'btn-info':''"  style="width:100px" ng-click="zone('OVERALL','7.8757327','79.5789703','7')">OVERALL</button>
+            <button class="btn btn-sm"  ng-class="activeZone=='WEST'?'btn-info':''"  style="width:100px" ng-click="zone('WEST','6.8548205','79.6020563','9')">WEST</button>
+            <button class="btn btn-sm"   ng-class="activeZone=='NORTH'?'btn-info':' '" style="width:100px" ng-click="zone('NORTH','8.8507443','80.0568107','8')">NORTH</button>
+            <button class="btn btn-sm"  ng-class="activeZone=='EAST'?'btn-info':''"  style="width:100px" ng-click="zone('EAST','7.8126996','80.8910814','9')">EAST</button>
+            <button class="btn btn-sm"   ng-class="activeZone=='SOUTH'?'btn-info':''" style="width:100px" ng-click="zone('SOUTH','6.6061404','80.4101864','9')">SOUTH</button>   
+        </div>
+
+    </div>
+</div>
+
+<br>  
+
+<div class="col-md-12">
+    <div class="panel panel-default">
+
+        <div class="panel-body"  >
+            <div class="col-md-9 animated bounceInLeft">
+                <ui-gmap-google-map center="positionsCenter" zoom="positionsCenter.zoom"  pan="true" draggable="false" bounds="bounds" >
+
+
+                    <ui-gmap-markers models="markers" coords="'self'"  icon="'icon'" click="assSelect"> 
+                    </ui-gmap-markers> 
+
+                </ui-gmap-google-map>
+
+            </div>
+            <div class="col-md-3 animated bounceInRight" style=" padding-left:0cm;padding-right:0cm"  > 
+                <uib-tabset>
+
+
+                    <uib-tab heading="ACESSORS" >
+                        <br> 
+                        <div ng-show="accessorList" ng-class="accessorList?'animated bounceInRight':''" >
+                            <div class="panel panel-solid-success widget-mini">
+                                <div class="panel-body">
+                                    <i class="icon-user"></i>
+                                    <span class="total text-center">{{acessorCount}}</span>
+                                    <span class="title text-center">Accessors Online</span>
+                                </div>
+                            </div>
+
+                            <table class="table table-hover table-condensed" style="font-size:90%">
+                                <tbody>
+                                    <tr>
+                                        <input class="form-control input-sm" placeholder="Search Assessor Here" ng-model="assSearch"><br>
+                                    </tr>
+                                    <tr   ng-repeat="x in markers | filter:assSearch | limitTo:7" ng-if="x.type == 'accessor'"  ng-click="viewAss(x)" >
+                                        <!-- http://www.dotnetcurry.com/aspnet/1049/crud-database-aspnet-webapi-angularjs -->
+                                        <a href="">
+                                            <td>
+
+                                                {{x.title}}
+                                            </td>
+                                            <td>
+                                                <span class=" icon-arrow-right"></span>
+                                            </td>
+                                        </a>
+                                    </tr>                                    
+
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div ng-hide="accessorList" ng-class="accessorList?' ':'animated  bounceInRight'">
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="" ng-click="viewList()"><i class="icon-arrow-left" style="padding-left:1px;font-size:200%"></i></a> 
+
+                                </div> <div class="col-md-10">
+                                <h4>{{assInfo.title}}</h4>
+                                <br>
+                                <h6>{{assInfo.assCode}}   </h6>
+                                <h4> <small> {{assInfo.contact}}</small></h4>
+                                </div>
+
+                            </div>
+
+                            <br>
+                            <div class="panel  widget-mini"  ng-class="assessorJobList.length > 2 ? 'panel-solid-danger': 'panel-solid-success' " ng-if="!assessorJobListLoad">
+                                <div class="panel-body">
+
+                                    <div class="col-md-12">
+                                        <span class="total text-center" style="font-size:90%">{{assessorJobList.length}} Job<temp ng-if="assessorJobList.length != 1">s</temp> Allocated</span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <center>  <md-progress-circular md-mode="indeterminate" ng-if="assessorJobListLoad"></md-progress-circular> </center>
+
+                                <div ng-repeat="b in assessorJobList" style="font-size:85%"> 
+
+                                    <assessor-details ass="b"></assessor-details>
+
+                                </div>
+                            </div>
+                        </div>
+                    </uib-tab>
+
+                    <!-- <uib-tab heading="ACCIDENTS" >
+<br>
+<input time="false" date="true" mdc-datetime-picker="" type="text" id="date" placeholder="Date"
+ng-model="date" min-date="minDate" max-date="maxDate" class=" form-control">
+
+<md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+<div class="panel panel-solid-danger widget-mini">
+<div class="panel-body">
+<i class=" fa fa-car"></i>
+<span class="total text-center">{{acessorCount}}</span>
+<span class="title text-center">Active Accidents</span>
+</div>
+</div>
+
+
+</uib-tab> -->
+                </uib-tabset>
+
+            </div>
+        </div>
+    </div></div>
+

@@ -1,0 +1,125 @@
+
+<br>
+
+<div class="container-fluid ">
+    <div class="row">
+        <div class="container">
+    <div class="panel panel-default animated zoomInUp" >
+                         <div class="panel-heading">
+
+                            <h5 class="title"  >JOB SUMMARY</h5>
+                        </div>
+
+    <div class="panel-body">
+        <canvas id="bar" class="chart chart-bar"
+  chart-data="data" height="50" chart-labels="labels" chart-colours="['#e74c3c','#f39c12','#18bc9c']" chart-series="series"   >
+        </canvas>
+        
+    </div>    
+    
+    </div>
+    </div>
+    
+    </div>
+    <div class="row " >
+
+
+      
+
+
+            <div class=" row">
+
+                <div class="container animated zoomInUp" style="padding-left:0cm;padding-right:0cm">
+                <div class="col-md-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+
+                            <h5 class="title" style="color:white">PENDING JS JOBS</h5>
+                        </div>
+
+                      
+                        <div class="list-group">
+
+
+                            <a href="" class="list-group-item list-warning">
+                                <h2 class="list-group-item-heading"> {{jstot}} <small>total inspections </small></h2>
+                               
+                            </a>
+
+                      <a href="" ui-sref="engDash.info({main: 'AG', sub: x.insType})" class="list-group-item " ng-repeat=" x in js"  ng-click="changeStatus()">  
+                                <h3 class="list-group-item-heading">{{x.insType}} <small> {{x.nop}} cases <i class="fa fa-fw  fa-chevron-right pull-right" style="color:grey;margin-top:3%"></i> </small></h3>
+
+                            </a>
+
+                        </div> 
+                        
+                        
+
+                    </div>    
+
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+
+                            <h5 class="title" style="color:white">PENDING JC JOBS</h5>
+                        </div>
+   
+                      
+                        <div class="list-group">
+
+
+                            <a href="" class="list-group-item red">
+                                <h2 class="list-group-item-heading">{{jctot}} <small>total inspections </small></h2>
+                               
+                            </a>
+
+                                <a href="" class="list-group-item " ui-sref="engDash.info({main: 'JS', sub: x.insType})"  ng-repeat=" x in jc"  ng-click="changeStatus()">
+                                <h3 class="list-group-item-heading">{{x.insType}} <small> {{x.nop}} cases <i class="fa fa-fw  fa-chevron-right pull-right" style="color:grey;margin-top:3%"></i> </small></h3>
+
+                            </a>
+
+                        </div>    
+
+                    </div>    
+
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+
+                        <div class="panel-heading">
+
+                            <h5 class="" style="color:white">COMPLETED JOBS</h5>
+                        </div>
+                          
+                     
+                        <div class="list-group">
+
+
+                            <a href="" class="list-group-item warning">
+                                <h2 class="list-group-item-heading"> {{comptot}} <small>total inspections </small></h2>
+                             
+                            </a>
+
+                            <a href="" class="list-group-item " ui-sref="engDash.info({main: 'JC', sub: x.insType})" ng-repeat=" x in completed" ng-click="changeStatus()">
+                                <h3 class="list-group-item-heading">{{x.insType}} <small> {{x.nop}} cases <i class="fa fa-fw  fa-chevron-right pull-right" style="color:grey;margin-top:3%"></i> </small></h3>
+
+                            </a>
+ 
+
+                        </div>    
+
+                    </div>    
+
+                </div>
+                    </div>
+ 
+
+            </div>
+
+
+       
+
+    </div>
+
+</div>

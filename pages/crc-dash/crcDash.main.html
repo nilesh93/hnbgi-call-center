@@ -1,0 +1,15 @@
+<br>
+
+<div   class="row  " style="margin-bottom:1%" >
+    <div class="col-md-offset-4 col-md-4">
+        <center> <div class="btn-group col-md-12 " ng-init="stat = 'DASH'">
+            <button class="btn  btn-sm col-md-4   " ng-click="stat = 'DASH'" ng-class="stat == 'DASH'?'btn-info':'btn-white'"    ui-sref="crcDash.dashboard" >Dashboard</button>
+                  <button class="btn  btn-sm col-md-4   " ng-click="stat = 'ACTIVITY'" ng-class="stat == 'ACTIVITY'?'btn-info':'btn-white'"    ui-sref="crcDash.activity" >Agent Activity</button>
+            <button class="btn btn-sm  col-md-4  " ng-click="stat = 'REP'"   ng-class="stat == 'REP'?'btn-info':'btn-white'"  ui-sref="crcDash.reports"    >  Reject</button> 
+
+            </div> </center>
+    </div> 
+    </div>
+
+ 
+<div  ui-view name="result"> </div>

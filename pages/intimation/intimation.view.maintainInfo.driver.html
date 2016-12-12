@@ -1,0 +1,201 @@
+ 
+
+         <uib-accordion close-others="oneAtATime">
+  
+    <uib-accordion-group is-open="status.open">
+      <uib-accordion-heading>
+       Driver Details <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </uib-accordion-heading>
+        
+        <form class="form-horizontal">
+            <div class="row" style="padding:0.5%" ng-hide="showItem=='DRIVER'" >
+                <div class="col-md-2"><b> Driver Details </b></div>
+                <div class="col-md-10 text-uppercase">{{iv.intimationMain.detailOfDriver}}
+                </div>
+
+            </div> 
+
+
+
+            <div class="form-group" ng-show="showItem=='DRIVER'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left">  Driver Details </label> <div class="col-md-10 ">
+                    <input type="text" class="form-control input-sm" ng-model="iv.job.detailOfDriver">  
+                </div>
+            </div>
+
+            <div class="row" style="padding:0.5%" ng-hide="showItem=='DRIVER'">
+                <div class="col-md-2"><b> Driver Name </b></div>
+                <div class="col-md-10 text-uppercase">{{iv.intimationMain.driverName}}
+                </div>
+
+            </div> 
+
+            <div class="form-group" ng-show="showItem=='DRIVER'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left">  Driver Name </label>
+                <div class="col-md-10 ">
+
+                    <input type="text" class="form-control input-sm" ng-model="iv.job.driverName">
+
+
+                </div>
+            </div>
+
+            <div class="row" style="padding:0.5%" ng-hide="showItem=='DRIVER'">
+                <div class="col-md-2"><b>DL Number </b></div>
+                <div class="col-md-4 text-uppercase">  
+                    {{iv.intimationMain.licenseNumber}}
+                    
+                </div>
+                <div class="col-md-2"><b>DL Category </b></div>
+                <div class="col-md-4 text-uppercase"> 
+                     {{iv.intimationMain.licenseCategory}}
+                </div>
+            </div>  
+
+
+            <div class="form-group" ng-show="showItem=='DRIVER'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left">  DL Number </label>
+                <div class="col-md-4 ">
+                    <input type="text" class="form-control input-sm" ng-model="iv.job.licenseNumber">
+
+                </div>
+
+                <label class="col-md-2 control-label" style="text-align:left">  DL Category </label>
+                <div class="col-md-4 ">
+                    <input type="text" class="form-control input-sm" ng-model="iv.job.licenseCategory">
+
+                </div>
+            </div>
+
+            <div class="row" style="padding:0.5%" ng-hide="showItem=='DRIVER'">
+                <div class="col-md-2"><b>Relation </b></div>
+                <div class="col-md-4 text-uppercase">  {{iv.intimationMain.relationTypeOfDrive}}
+                </div>
+                <div class="col-md-2"><b>Relation Details </b></div>
+                <div class="col-md-4 text-uppercase">   {{iv.intimationMain.relationTypeOfDriverDeatils}}
+                </div>
+            </div> 
+
+
+
+            <div class="form-group" ng-show="showItem=='DRIVER'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left"> Relation</label>
+                <div class="col-md-4 ">
+                       <select class="form-control input-sm" ng-model="iv.job.relationTypeOfDrive"  >
+                        <option value="OWNER">OWNER</option>
+                        <option value="SPOUSE">SPOUSE</option>
+                        <option value="DRIVER">DRIVER</option>
+                        <option value="OTHER">OTHER</option>
+                    </select>
+
+                </div>
+
+                <label class="col-md-2 control-label" style="text-align:left"> Relation Details </label>
+                <div class="col-md-4 ">
+                     <input type="text" ng-model="iv.job.relationTypeOfDriverDeatils" class="form-control input-sm" ng-disabled="iv.job.relationTypeOfDrive != 'OTHER'" > 
+
+                </div>
+            </div>
+
+            <div class="row" style="padding:0.5%" ng-hide="showItem=='DRIVER'">
+                <div class="col-md-2"><b>Damges </b></div>
+                <div class="col-md-10 text-uppercase">  {{iv.intimationMain.detailOfDamage}}
+                </div>
+
+            </div> 
+
+
+
+            <div class="form-group" ng-show="showItem=='DRIVER'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left">  Damages </label>
+                <div class="col-md-10 ">
+                    <textarea type="text" class="form-control input-sm" ng-model="iv.job.detailOfDamage"></textarea>
+                </div>
+            </div>
+
+            <div class="row" style="padding:0.5%" ng-hide="showItem=='DRIVER'">
+                <div class="col-md-2"><b>Parties Involved </b></div>
+                <div class="col-md-10 text-uppercase">  {{iv.intimationMain.thirdPartyDetails}}
+                </div>
+
+            </div> 
+
+
+            <div class="form-group" ng-show="showItem=='DRIVER'"  style="padding:0.5%">
+
+                <label class="col-md-2 control-label" style="text-align:left">  Parties Involved </label>
+                <div class="col-md-10 ">
+                    <input type="text" class="form-control input-sm"  ng-model="iv.job.thirdPartyDetails">  
+                </div>
+            </div>
+
+
+
+
+            <!--  <div class="row" style="padding:0.5%" ng-hide="showItem=='DRIVER'">
+<div class="col-md-2"><b>Cause Code </b></div>
+<div class="col-md-4 text-uppercase">   {{iv.intimationMain.causeCode}}
+</div>
+<div class="col-md-2"><b>Cause Details </b></div>
+<div class="col-md-4 text-uppercase">   {{iv.intimationMain.causeDetails}}
+</div>
+</div> 
+
+
+<div class="form-group" ng-show="showItem=='DRIVER'"  style="padding:0.5%">
+
+<label class="col-md-2 control-label" style="text-align:left">Cause Code</label>
+<div class="col-md-4 ">
+<input type="text" class="form-control">
+
+</div>
+
+<label class="col-md-2 control-label" style="text-align:left"> Cause Details </label>
+<div class="col-md-4 ">
+<input type="text" class="form-control">
+
+</div>
+</div>
+-->
+
+
+            <div class="row" style="padding:0.5%" ng-hide="showItem=='DRIVER'">
+                <div class="col-md-2"><b> Insurance Company </b></div>
+                <div class="col-md-10 text-uppercase">{{iv.intimationMain.insuranceCompany}}
+                </div>
+
+            </div> 
+
+            <div class="form-group" ng-show="showItem=='INTI'" style="padding:0.5%">
+                <label class="col-md-2 control-label"  style="text-align:left"> Insurance Company </label>
+                <div class="col-md-4 text-uppercase">
+                    <input class="form-control input-sm" ng-model="iv.job.insuranceCompany">
+                </div>
+
+            </div>
+            
+             <div ng-show="userPermission.indexOf('JOB-UPDATE-MOTOR') != -1" > 
+               <div class="form-group" ng-hide="converNoteStatus">
+               
+                <div class="col-md-offset-10 col-md-2" ng-hide="showItem=='DRIVER'">
+                    <button   class="btn btn-block btn-sm btn-info" ng-click="showItem='DRIVER'"> EDIT </button>
+                </div> 
+                       <div class="col-md-offset-8 col-md-2" ng-show="showItem=='DRIVER'">
+                           <button   class="btn btn-block btn-sm btn-default" ng-click="showItem='NONE'"> CANCEL </button>
+                             </div>  
+                   <div class=" col-md-2" ng-show="showItem=='DRIVER'">
+                       <button   class="btn btn-block btn-sm btn-success" ng-click="iv.updateIntimation()"> SAVE </button>
+                   </div>
+                   
+               </div>
+            </div>
+
+        </form>
+        
+             </uib-accordion-group>
+</uib-accordion>

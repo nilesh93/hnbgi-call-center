@@ -1,0 +1,199 @@
+<div class="row">
+
+    <div class="col-md-12">
+
+
+
+        <div class="panel panel-warning">
+
+            <div class="panel-heading">
+
+
+                <h3 class="panel-title">NON-MOTOR PUR No -  {{purInfo.purNo}}</h3>
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default" style="font-size:90%" >
+
+                    <div class="panel-heading">
+
+
+                        <h3 class="panel-title">General Information</h3>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12 "  >
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> PUR No. </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.purNo}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Policy No. </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.policyNo}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Policy Type </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.policyType}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Client Name</b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.clientName}}</div>
+                            </div>
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Sum Insured</b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.sumInsured | currency:"Rs."}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Channel Detail</b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.channelDetails}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Risk Address</b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.riskAddress}}</div>
+                            </div>
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Relevent Party</b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.relavantParty}}</div>
+                            </div>
+
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Relevent Contact</b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.relavantContact}}</div>
+                            </div>
+
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>Branch</b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.branchCode}}</div>
+                            </div>
+
+
+
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Informer   Contact</b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.informerContact}}</div>
+                            </div>
+                            <div class="row" style="padding-top:1.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b>  CRC Officer</b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.crcUser}}</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="panel panel-default" style="font-size:90%" >
+
+                    <div class="panel-heading">
+
+
+                        <h3 class="panel-title">Other Information</h3>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12 "  >
+
+
+
+
+                            <div class="form-group" style="padding-top:1.5%;padding-bottom:1%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> Assessor  </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.assessorName}} - {{purInfo.assessorCode}}</div>
+                            </div>
+                         
+
+
+                            <div class="form-group" style="padding-top:1.5%;padding-bottom:2.5%">
+                                <div class="col-md-3" style="padding-left:0cm"><b> CRC Recieve Date </b></div>
+                                <div class="col-md-9 text-uppercase">{{purInfo.crcReceiveDate}}</div>
+                            </div>
+
+
+                            <form class="form-horizontal">
+
+<fieldset ng-disabled="purInfo.crcCompleteDate !=''">
+
+
+
+
+                                <div class="form-group">
+
+                                    <label class="col-md-3">Completed Date</label>
+
+                                    <div class="col-md-9 text-uppercase">
+
+                                        <div class="dropdown">
+                                            <a class="dropdown-toggle" id="completed" role="button" data-toggle="dropdown" data-target="#" href="">
+                                                <input type="text" class="form-control input-sm" ng-model="job.crcCompleteDate" readonly>
+                                            </a>
+                                            <ul ng-if="purInfo.crcCompleteDate ==''" class="dropdown-menu" role="menu" aria-labelledby="dLabel3">
+                                                <datetimepicker data-ng-model="job.crcCompleteDate"
+                                                                data-datetimepicker-config="{ dropdownSelector: '#completed' ,minView:'day',modelType:'YYYY-MM-DD'}" data-before-render="beforeRender($view, $dates, $leftDate, $upDate, $rightDate)"></datetimepicker>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="col-md-3">Comments</label>
+
+                                    <div class="col-md-9 text-uppercase">
+
+                                        <textarea rows="4" class="form-control input-sm" ng-model="purInfo.comments"></textarea>
+
+                                    </div>
+
+                                </div>
+
+                           
+
+
+                                         <div class="form-group" ng-show="purInfo.crcCompleteDate ==''">
+     
+                                            <div class=" col-md-offset-6 col-md-3">
+                                                    <button class="btn  btn-sm btn-block btn-default" ng-click="reset()">Reset</button>
+                                            </div>
+                                            <div class="col-md-3">
+                                            
+                                            <button class="btn btn-sm  btn-block btn-success" ng-click="nonmotorSave()">Save</button>
+                                            </div>
+     </div>
+    </fieldset>
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
